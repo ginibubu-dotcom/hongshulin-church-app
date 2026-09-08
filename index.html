@@ -24,8 +24,6 @@ body{
   line-height:1.8;
 }
 
-/* ===== 導覽列 ===== */
-
 header{
   position:sticky;
   top:0;
@@ -64,34 +62,19 @@ nav{
   font-size:14px;
 }
 
-/* ===== 主視覺 ===== */
-
 .hero{
   min-height:82vh;
   position:relative;
   overflow:hidden;
-
   display:flex;
   justify-content:center;
   align-items:center;
-
   text-align:center;
   padding:90px 20px;
-
   background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.82),
-      rgba(239,245,236,.82)
-    ),
-    linear-gradient(
-      135deg,
-      #f8faf6,
-      #e7efe5
-    );
+    linear-gradient(180deg,rgba(255,255,255,.82),rgba(239,245,236,.82)),
+    linear-gradient(135deg,#f8faf6,#e7efe5);
 }
-
-/* 日式窗景 */
 
 .window{
   position:absolute;
@@ -100,10 +83,8 @@ nav{
   bottom:-5%;
   left:50%;
   transform:translateX(-50%);
-
   border:10px solid rgba(120,105,78,.15);
   border-bottom:0;
-
   border-radius:4px 4px 0 0;
 }
 
@@ -126,8 +107,6 @@ nav{
   height:5px;
   background:rgba(120,105,78,.12);
 }
-
-/* 遠方淡江大橋意象 */
 
 .bridge{
   position:absolute;
@@ -160,10 +139,7 @@ nav{
   transform:rotate(-5deg);
 }
 
-/* 庭園 */
-
-.garden-left,
-.garden-right{
+.garden-left,.garden-right{
   position:absolute;
   bottom:0;
   width:34%;
@@ -231,8 +207,6 @@ nav{
   flex-wrap:wrap;
 }
 
-/* ===== 按鈕 ===== */
-
 .button{
   display:inline-block;
   padding:12px 25px;
@@ -256,8 +230,6 @@ nav{
 .button:hover{
   transform:translateY(-2px);
 }
-
-/* ===== 通用區塊 ===== */
 
 section{
   padding:80px 20px;
@@ -291,8 +263,6 @@ section{
   color:#455c50;
 }
 
-/* ===== 卡片 ===== */
-
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -301,487 +271,4 @@ section{
 
 .card{
   background:rgba(255,255,255,.83);
-  border:1px solid rgba(164,147,106,.25);
-  border-radius:18px;
-  padding:30px 24px;
-  box-shadow:0 12px 35px rgba(65,80,70,.06);
-}
-
-.card h3{
-  color:#50695b;
-  margin-bottom:10px;
-}
-
-.card p{
-  color:#68736d;
-  font-size:14px;
-}
-
-/* ===== 歡迎 ===== */
-
-.welcome-text{
-  max-width:760px;
-  margin:auto;
-  text-align:center;
-  font-size:16px;
-  color:#637069;
-}
-
-/* ===== 功能入口 ===== */
-
-.feature-card{
-  text-align:center;
-}
-
-.icon{
-  font-size:32px;
-  margin-bottom:13px;
-}
-
-/* ===== 牧者作品 ===== */
-
-.music-card{
-  max-width:720px;
-  margin:auto;
-  text-align:center;
-}
-
-.music-card h3{
-  font-family:serif;
-  font-size:28px;
-  font-weight:500;
-}
-
-.music-card .author{
-  color:#a08a5b;
-  margin:5px 0 20px;
-}
-
-/* ===== 聯絡 ===== */
-
-.contact{
-  background:#40594d;
-  color:white;
-  text-align:center;
-}
-
-.contact .section-title h2{
-  color:white;
-}
-
-.contact .section-title span{
-  color:#d7c79c;
-}
-
-.contact p{
-  color:#e8eee9;
-}
-
-/* ===== Footer ===== */
-
-footer{
-  padding:30px 20px;
-  text-align:center;
-  color:#7a857f;
-  background:#f8faf7;
-  font-size:12px;
-}
-
-/* ===== 手機 ===== */
-
-@media(max-width:700px){
-
-  nav{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .nav-links{
-    gap:12px;
-  }
-
-  .nav-links a{
-    font-size:13px;
-  }
-
-  .hero{
-    min-height:78vh;
-    padding:75px 18px;
-  }
-
-  .hero h1{
-    letter-spacing:3px;
-  }
-
-  section{
-    padding:60px 18px;
-  }
-
-  .section-title h2{
-    font-size:27px;
-  }
-
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<nav>
-
-<div class="logo">
-紅樹林靈糧堂
-</div>
-
-<div class="nav-links">
-<a href="#about">我們的家</a>
-<a href="#service">聚會</a>
-<a href="#fun">家遊趣</a>
-<a href="#events">加油去</a>
-<a href="#music">牧者創作</a>
-<a href="#contact">聯絡</a>
-</div>
-
-</nav>
-</header>
-
-
-<main>
-
-<!-- ===== 首頁 ===== -->
-
-<section class="hero">
-
-<div class="window"></div>
-<div class="bridge"></div>
-<div class="garden-left"></div>
-<div class="garden-right"></div>
-
-<div class="hero-content">
-
-<div class="hero-small">
-HONGSHULIN BREAD OF LIFE CHURCH
-</div>
-
-<h1>紅樹林靈糧堂</h1>
-
-<h2>在愛中成為一家人</h2>
-
-<p>
-在淡水河畔，一個敬拜、禱告、彼此陪伴的家。<br>
-無論你正走在人生的哪一段路，
-願你在這裡遇見神，也遇見願意與你同行的人。
-</p>
-
-<div class="hero-buttons">
-
-<a class="button primary" href="#service">
-來聚會
-</a>
-
-<a class="button secondary" href="#about">
-認識我們
-</a>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ===== 歡迎回家 ===== -->
-
-<section id="about">
-
-<div class="container">
-
-<div class="section-title">
-<span>WELCOME HOME</span>
-<h2>歡迎回家</h2>
-</div>
-
-<div class="welcome-text">
-
-教會不只是一個星期日聚會的地方，
-而是一群人一起敬拜、禱告、歡笑，
-也在困難中彼此扶持的家。
-
-<br><br>
-
-無論你是第一次來到教會，
-或已經走在信仰道路多年，
-我們都歡迎你來到紅樹林靈糧堂，
-一起經歷神的愛與恩典。
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ===== 聚會 ===== -->
-
-<section id="service" class="soft">
-
-<div class="container">
-
-<div class="section-title">
-<span>GATHER TOGETHER</span>
-<h2>一起來聚會</h2>
-</div>
-
-<div class="cards">
-
-<div class="card feature-card">
-<div class="icon">☀</div>
-<h3>主日崇拜</h3>
-<p>
-一起敬拜、領受神的話語，
-在新的一週重新得力。
-</p>
-</div>
-
-<div class="card feature-card">
-<div class="icon">◯</div>
-<h3>禱告聚會</h3>
-<p>
-一起禱告、彼此守望，
-把生命帶到神面前。
-</p>
-</div>
-
-<div class="card feature-card">
-<div class="icon">⌂</div>
-<h3>小組生活</h3>
-<p>
-信仰不只在聚會裡，
-也在真實的生活與關係裡。
-</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ===== 家遊趣 ===== -->
-
-<section id="fun">
-
-<div class="container">
-
-<div class="section-title">
-<span>OUR JOURNEY</span>
-<h2>家遊趣</h2>
-</div>
-
-<div class="cards">
-
-<div class="card feature-card">
-<div class="icon">▣</div>
-
-<h3>我們一起走過的風景</h3>
-
-<p>
-記錄核心同工、小組與教會家人
-一起旅行、出遊與生活的珍貴照片。
-</p>
-
-<br>
-
-<a class="button secondary" href="#">
-瀏覽照片
-</a>
-
-</div>
-
-<div class="card feature-card">
-
-<div class="icon">♡</div>
-
-<h3>一起，就是最好的風景</h3>
-
-<p>
-旅行留下的不只是照片，
-更是我們一起笑、一起走、
-一起成長的回憶。
-</p>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ===== 加油去 ===== -->
-
-<section id="events" class="soft">
-
-<div class="container">
-
-<div class="section-title">
-<span>LET'S GO</span>
-<h2>加油去</h2>
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>近期活動</h3>
-
-<p>
-教會不定期舉辦戶外活動、
-特別聚會、家庭活動與各類精彩企劃。
-</p>
-
-<br>
-
-<a class="button primary" href="#">
-查看最新活動
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>一起參加</h3>
-
-<p>
-別只是看活動，
-一起加入我們，
-創造下一段屬於教會家人的回憶。
-</p>
-
-<br>
-
-<a class="button secondary" href="#">
-我要報名
-</a>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ===== 影音 ===== -->
-
-<section id="media">
-
-<div class="container">
-
-<div class="section-title">
-<span>MESSAGE & WORSHIP</span>
-<h2>講道與敬拜</h2>
-</div>
-
-<div class="cards">
-
-<div class="card">
-<h3>主日信息</h3>
-<p>
-透過神的話語，
-在生活中重新找到力量與方向。
-</p>
-</div>
-
-<div class="card">
-<h3>敬拜影音</h3>
-<p>
-用詩歌與敬拜親近神，
-讓心再次安靜在祂面前。
-</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ===== 牧者創作 ===== -->
-
-<section id="music" class="soft">
-
-<div class="container">
-
-<div class="section-title">
-<span>ORIGINAL MUSIC</span>
-<h2>牧者創作</h2>
-</div>
-
-<div class="card music-card">
-
-<h3>你還記得嗎</h3>
-
-<div class="author">
-原創音樂作品
-</div>
-
-<p>
-用音樂記錄生命，
-也把從神而來的感動化成旋律。
-</p>
-
-<br>
-
-<a
-class="button primary"
-href="https://youtu.be/AXSwFL7Qn-s?si=pCR7ZwHlt7UCayxN"
-target="_blank"
-rel="noopener noreferrer">
-▶ 聆聽作品
-</a>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ===== 聯絡 ===== -->
-
-<section id="contact" class="contact">
-
-<div class="container">
-
-<div class="section-title">
-<span>COME & SEE</span>
-<h2>期待與你見面</h2>
-</div>
-
-<p>
-紅樹林靈糧堂
-<br>
-歡迎你和家人一起來到我們當中。
-</p>
-
-<br>
-
-<p>
-社團法人新北市基督教紅樹林靈糧堂協會
-</p>
-
-</div>
-</section>
-
-</main>
-
-
-<footer>
-
-© 2026 紅樹林靈糧堂
-<br>
-Hongshulin Bread of Life Church
-
-</footer>
-
-</body>
-</html>
+  border:1px sol
