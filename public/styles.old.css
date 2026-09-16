@@ -1,0 +1,395 @@
+:root{--ivory:#f7f2e8;--paper:#fffdf8;--ink:#292621;--muted:#777168;--gold:#b8924e;--gold2:#d8c292;--purple:#624064;--line:#e6dcc8;--shadow:0 18px 50px rgba(65,52,35,.08)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.75}a{color:inherit;text-decoration:none}.topbar{height:88px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;background:rgba(247,242,232,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.brand{display:flex;align-items:center;gap:13px}.brand .mark{width:36px;height:36px;display:block;transform:rotate(45deg);background:linear-gradient(135deg,var(--gold),#d6b875);border-radius:4px 55% 4px 55%}.brand b{display:block;font-size:22px;letter-spacing:.16em}.brand small{display:block;color:var(--muted);font-size:13px;letter-spacing:.08em}.menu{display:none;background:none;border:0;font-size:29px;color:var(--ink)}nav{display:flex;gap:25px;font-size:14px}nav a:hover{color:var(--gold)}.hero{min-height:680px;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:70px 7vw;background:radial-gradient(circle at 75% 40%,rgba(216,194,146,.23),transparent 32%),linear-gradient(135deg,#faf7ef,#f2ebdd)}.hero-copy{max-width:650px}.eyebrow,.section-head p{color:var(--gold);font-size:14px;font-weight:700;letter-spacing:.28em}.hero h1{font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(48px,6vw,88px);font-weight:500;line-height:1.22;letter-spacing:.03em;margin:25px 0}.hero-copy>p:not(.eyebrow){font-size:20px;color:var(--muted)}.actions{display:flex;gap:15px;margin-top:36px}.actions a{padding:13px 28px;border-radius:999px;border:1px solid var(--gold)}.actions .primary{background:var(--purple);border-color:var(--purple);color:white}.hero-art{min-height:500px;border-radius:180px 180px 20px 20px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(40,36,27,.08)),url("assets/hero-concept.png") center/cover no-repeat;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero-art:after{content:"淡水・紅樹林";position:absolute;right:24px;bottom:20px;background:rgba(255,253,248,.88);padding:8px 15px;border-radius:30px;color:var(--gold);font-size:12px;letter-spacing:.18em}.section{padding:100px 7vw}.section:nth-of-type(even){background:var(--paper)}.section-head{max-width:760px;margin-bottom:45px}.section-head h2{font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(32px,4vw,52px);font-weight:500;margin:5px 0}.section-head span{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:30px;min-height:220px;box-shadow:var(--shadow);transition:.25s}.card:hover{transform:translateY(-5px);border-color:var(--gold2)}.card.feature{grid-column:span 2;background:linear-gradient(135deg,#fffdf8,#f5ecdd)}.card span{color:var(--gold);font-size:13px;letter-spacing:.14em}.card h3{font-family:"Noto Serif TC","Songti TC",serif;font-size:25px;font-weight:500;margin:14px 0}.card p{color:var(--muted);margin:0}.media-grid,.two-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.media,.panel{background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}.media .visual{height:280px;background:linear-gradient(135deg,#ded8c7,#f4efe4)}.media .content,.panel{padding:30px}.pill{display:inline-block;padding:6px 13px;border:1px solid var(--gold2);border-radius:99px;color:var(--gold);font-size:12px}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.quick{padding:28px 18px;text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:20px}.quick strong{display:block;font-family:"Noto Serif TC","Songti TC",serif;font-size:19px;margin-top:10px}.contact{text-align:center;padding-top:110px;padding-bottom:120px;background:#2d2925;color:#f7f2e8}.contact .section-head{margin:0 auto 35px}.contact .section-head span{color:#c9c0b5}.contact a{color:#d8bd83}.footer{padding:25px 7vw;background:#211e1b;color:#a9a197;text-align:center;font-size:12px;letter-spacing:.08em}@media(max-width:900px
+wc -l public/styles.css && echo "V2 CSS 完成"cat > public/index.html <<'EOF'
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f2e8">
+<meta name="description" content="紅樹林靈糧堂 HSLLLC">
+<title>紅樹林靈糧堂 HSLLLC</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+<a class="brand" href="#top">
+<span class="mark"></span>
+<span><b>HSLLLC</b><small>紅樹林靈糧堂</small></span>
+</a>
+<button class="menu" aria-label="開啟選單">☰</button>
+<nav>
+<a href="#daily">每日靈糧</a>
+<a href="#gathering">聚會資訊</a>
+<a href="#media">講道影音</a>
+<a href="#family">家遊趣</a>
+<a href="#events">加油去</a>
+<a href="#works">牧者創作</a>
+</nav>
+</header>
+
+<main id="top">
+
+<section class="hero">
+<div class="hero-copy">
+<p class="eyebrow">CONNECTED · IGNITED · REVIVED</p>
+<h1>連結彼此<br>點燃復興<br>走進命定</h1>
+<p>在信仰裡相遇，在生活中同行。歡迎回家。</p>
+<div class="actions">
+<a class="primary" href="#daily">今日內容</a>
+<a href="#gathering">聚會資訊</a>
+</div>
+</div>
+<div class="hero-art" role="img" aria-label="紅樹林靈糧堂日式清新庭園視覺"></div>
+</section>
+
+<section id="daily" class="section">
+<div class="section-head">
+<p>DAILY</p>
+<h2>今天，讓心重新得力</h2>
+<span>每天一點時間，回到神的話語，也照顧自己的生活。</span>
+</div>
+
+<div class="cards">
+<article class="card feature">
+<span>01 · 今日神話</span>
+<h3>荒漠中的泉源</h3>
+<p>每日經文、默想與禱告，在忙碌生活中留下一段與神安靜相遇的時間。</p>
+</article>
+
+<article class="card">
+<span>02 · 每日靈修</span>
+<h3>研經釋義</h3>
+<p>從經文背景、信息與生活應用，更深認識神的話。</p>
+</article>
+
+<article class="card">
+<span>03 · HEALTH</span>
+<h3>每日健康小撇步</h3>
+<p>為長輩與家人整理實用、容易理解的健康生活資訊。</p>
+</article>
+</div>
+</section>
+
+<section id="gathering" class="section">
+<div class="section-head">
+<p>GATHERING</p>
+<h2>一起聚集，一起成長</h2>
+<span>主日、小組與教會近期聚會資訊。</span>
+</div>
+<div class="quick-grid">
+<a class="quick" href="#"><span>主日</span><strong>主日崇拜</strong></a>
+<a class="quick" href="#"><span>GROUP</span><strong>小組聚會</strong></a>
+<a class="quick" href="#events"><span>EVENT</span><strong>加油去</strong></a>
+<a class="quick" href="#family"><span>FAMILY</span><strong>家遊趣</strong></a>
+</div>
+</section>
+
+<section id="media" class="section">
+<div class="section-head">
+<p>MESSAGE & WORSHIP</p>
+<h2>講道與敬拜</h2>
+<span>讓信息不只停留在主日，陪伴每一天。</span>
+</div>
+<div class="media-grid">
+<article class="media">
+<div class="visual"></div>
+<div class="content"><span class="pill">最新講道</span><h3>主日信息</h3><p>最新主日講道影音將顯示在這裡。</p></div>
+</article>
+<article class="media">
+<div class="visual"></div>
+<div class="content"><span class="pill">WORSHIP</span><h3>敬拜影音</h3><p>敬拜、特別聚會與教會影音內容。</p></div>
+</article>
+</div>
+</section>
+
+<section id="family" class="section">
+<div class="section-head">
+<p>FAMILY JOURNEY</p>
+<h2>家遊趣</h2>
+<span>記錄核心同工、小組與教會家人一起走過的旅程。</span>
+</div>
+<div class="two-grid">
+<div class="panel"><span class="pill">相簿</span><h3>旅遊與活動照片</h3><p>未來可直接放入 Google 相簿、照片集或活動紀錄連結。</p></div>
+<div class="panel"><span class="pill">MEMORIES</span><h3>我們的共同回憶</h3><p>讓每一次同行，都成為教會家庭珍貴的故事。</p></div>
+</div>
+</section>
+
+<section id="events" class="section">
+<div class="section-head">
+<p>LET'S GO</p>
+<h2>加油去</h2>
+<span>不定期活動、特別聚會與報名資訊集中在這裡。</span>
+</div>
+<div class="cards">
+<article class="card feature"><span>近期活動</span><h3>下一站，一起出發</h3><p>活動日期、地點、內容與報名連結將可直接由同工更新。</p></article>
+<article class="card"><span>REGISTRATION</span><h3>活動報名</h3><p>手機直接查看活動並前往報名。</p></article>
+</div>
+</section>
+
+<section id="works" class="section">
+<div class="section-head">
+<p>ORIGINAL MUSIC</p>
+<h2>牧者創作</h2>
+<span>用音樂記錄信仰、生命與故事。</span>
+</div>
+<div class="two-grid">
+<div class="panel"><span class="pill">最新作品</span><h3>你還記得嗎</h3><p>紅樹林靈糧堂原創音樂作品。</p></div>
+<div class="panel"><span class="pill">COMING NEXT</span><h3>新作上線</h3><p>未來新作品可同步網站與 App 推播。</p></div>
+</div>
+</section>
+
+<section class="section contact">
+<div class="section-head">
+<p>WELCOME HOME</p>
+<h2>紅樹林靈糧堂</h2>
+<span>在愛中連結，在盼望中同行。</span>
+</div>
+<p>FAITH × LIFE × COMMUNITY × TOMORROW</p>
+</section>
+
+</main>
+
+<footer class="footer">© 2026 HSLLLC 紅樹林靈糧堂</footer>
+<script src="/app.js"></script>
+</body>
+</html>
+
+/* ===== HSLLLC V2 Typography + Hero ===== */
+
+/* 全站：乾淨、日式、適合手機閱讀 */
+body{
+  font-family:
+    "Noto Sans TC",
+    "PingFang TC",
+    "Microsoft JhengHei",
+    sans-serif;
+  font-weight:400;
+  letter-spacing:.04em;
+  color:#29251f;
+  background:#f8f4ea;
+}
+
+/* 中文大標：細緻宋體 */
+h1,h2,h3,
+.hero h1{
+  font-family:
+    "Noto Serif TC",
+    "Songti TC",
+    "PMingLiU",
+    serif;
+  font-weight:400;
+}
+
+/* 首頁 Hero */
+.hero{
+  min-height:auto;
+  padding:72px 7% 58px;
+  background:#f8f4ea;
+  display:grid;
+  grid-template-columns:minmax(320px,.82fr) minmax(480px,1.35fr);
+  gap:5vw;
+  align-items:center;
+}
+
+.hero-copy{
+  max-width:560px;
+}
+
+.hero .eyebrow{
+  color:#b28a48;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.28em;
+  margin-bottom:28px;
+}
+
+.hero h1{
+  font-size:clamp(48px,5vw,78px);
+  line-height:1.28;
+  letter-spacing:.05em;
+  margin:0 0 26px;
+}
+
+.hero-copy > p:not(.eyebrow){
+  color:#756f65;
+  font-size:18px;
+  line-height:1.9;
+}
+
+/* 主視覺：使用正式日式清新首頁圖 */
+.hero-art{
+  min-height:570px;
+  border-radius:2px;
+  background-image:url("/assets/hslllc-main-visual.png");
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 18px 45px rgba(73,57,31,.10);
+}
+
+/* 按鈕 */
+.actions{
+  margin-top:34px;
+  display:flex;
+  gap:16px;
+}
+
+.actions a{
+  padding:15px 27px;
+  border:1px solid #b69255;
+  border-radius:999px;
+  text-decoration:none;
+  letter-spacing:.08em;
+}
+
+.actions .primary{
+  background:#654069;
+  border-color:#654069;
+  color:white;
+}
+
+/* 手機版 */
+@media(max-width:800px){
+
+  .hero{
+    display:flex;
+    flex-direction:column;
+    padding:46px 24px 32px;
+    gap:38px;
+    align-items:stretch;
+  }
+
+  .hero-copy{
+    width:100%;
+  }
+
+  .hero .eyebrow{
+    font-size:11px;
+    line-height:1.7;
+    letter-spacing:.20em;
+    margin-bottom:22px;
+  }
+
+  .hero h1{
+    font-size:47px;
+    line-height:1.32;
+    letter-spacing:.025em;
+    margin-bottom:22px;
+  }
+
+  .hero-copy > p:not(.eyebrow){
+    font-size:16px;
+    line-height:1.8;
+  }
+
+  .hero-art{
+    width:calc(100% + 48px);
+    margin-left:-24px;
+    min-height:330px;
+    border-radius:0;
+    background-position:center center;
+    box-shadow:none;
+  }
+
+  .actions{
+    margin-top:27px;
+  }
+
+  .actions a{
+    padding:14px 22px;
+    font-size:15px;
+  }
+}
+
+@media(max-width:380px){
+  .hero h1{
+    font-size:42px;
+  }
+}
+EOFcloudshell edit ~/hslllc-site/public/styles.css
+
+/* HSLLLC 日式清新主視覺 V2 */
+body{font-family:"Noto Serif TC","Source Han Serif TC","PingFang TC","Microsoft JhengHei",serif;letter-spacing:.02em}.hero{min-height:760px;align-items:center}.hero h1{font-size:clamp(52px,5.4vw,84px);font-weight:500;line-height:1.3;letter-spacing:.08em}.hero-art{min-height:680px;background-image:url("/assets/hslllc-main-visual.png");background-size:cover;background-position:center center;border-radius:2px}@media(max-width:800px){.hero{min-height:auto;padding:42px 24px 0;gap:32px}.hero h1{font-size:clamp(42px,12vw,58px);line-height:1.3}.hero-art{width:calc(100% + 48px);margin-left:-24px;min-height:430px;background-size:cover;background-position:center center;border-radius:0}}
+
+/* ===== HSLLLC 正式 Logo ===== */
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand .mark{
+  width:64px;
+  height:64px;
+  display:block;
+  background:url("/assets/hslllc-logo.png") center/contain no-repeat;
+  font-size:0;
+}
+
+.brand small{
+  display:none;
+}
+
+.brand b{
+  font-family:"Noto Serif TC","PingFang TC","Microsoft JhengHei",serif;
+  font-size:22px;
+  letter-spacing:.12em;
+  font-weight:600;
+}
+
+/* ===== 首頁主視覺 ===== */
+
+.hero-art{
+  background-image:url("/assets/hslllc-main-visual.png") !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  background-repeat:no-repeat !important;
+}
+
+/* ===== 手機版 ===== */
+
+@media(max-width:800px){
+
+  .brand .mark{
+    width:54px;
+    height:54px;
+  }
+
+  .brand b{
+    font-size:18px;
+  }
+
+  .hero-art{
+    width:calc(100% + 48px);
+    margin-left:-24px;
+    min-height:430px;
+    background-size:cover !important;
+    background-position:center center !important;
+  }
+}
+
+
+/* ===== 正式 HSLLLC LOGO V5 ===== */
+.brand{
+  display:flex !important;
+  align-items:center !important;
+  text-decoration:none !important;
+}
+
+.brand .official-logo{
+  display:block !important;
+  width:190px !important;
+  height:72px !important;
+  object-fit:contain !important;
+  object-position:left center !important;
+}
+
+@media(max-width:800px){
+  .brand .official-logo{
+    width:150px !important;
+    height:58px !important;
+  }
+}
+

@@ -1,0 +1,9 @@
+{
+  "name": "紅樹林靈糧堂 HSLLLC",
+  "short_name": "HSLLLC",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f2e8",
+  "theme_color": "#f7f2e8",
+  "lang": "zh-Hant"
+}

@@ -1,0 +1,3284 @@
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:#f5efe3;
+  color:#392d28;
+  font-family:"Noto Serif TC","PMingLiU",serif;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+
+/* ===== HERO ===== */
+
+.hero{
+  position:relative;
+  width:100%;
+  height:100svh;
+  min-height:700px;
+  overflow:hidden;
+  background:#d8c29f;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  z-index:0;
+}
+
+/* 只替文字區增加局部亮度，不讓整張圖泛白 */
+.soft-light{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(
+    90deg,
+    rgba(255,250,239,.76) 0%,
+    rgba(255,250,239,.48) 38%,
+    rgba(255,250,239,.08) 66%,
+    rgba(255,250,239,0) 100%
+  );
+}
+
+
+/* ===== LOGO + MENU ===== */
+
+header{
+  position:absolute;
+  z-index:5;
+  top:0;
+  left:0;
+  right:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding:calc(20px + env(safe-area-inset-top)) 6vw 0;
+}
+
+.logo{
+  display:block;
+  width:43vw;
+  max-width:230px;
+  height:auto;
+  mix-blend-mode:multiply;
+}
+
+.menu{
+  width:55px;
+  height:55px;
+  padding:0;
+  border:0;
+  background:transparent;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-end;
+  gap:7px;
+}
+
+.menu span{
+  width:43px;
+  height:4px;
+  border-radius:5px;
+  background:white;
+  box-shadow:0 1px 4px rgba(0,0,0,.35);
+}
+
+
+/* ===== HERO TEXT ===== */
+
+.hero-content{
+  position:absolute;
+  z-index:3;
+  top:18%;
+  left:7vw;
+  width:86%;
+}
+
+.eyebrow{
+  margin-bottom:18px;
+  color:#986a22;
+  font-family:Arial,sans-serif;
+  font-size:clamp(11px,2.8vw,16px);
+  font-weight:600;
+  letter-spacing:.20em;
+}
+
+h1{
+  margin:0;
+  font-size:clamp(38px,9.5vw,64px);
+  line-height:1.34;
+  font-weight:600;
+  letter-spacing:.01em;
+}
+
+h1 span{
+  display:block;
+  color:#54215f;
+  text-shadow:0 1px 1px rgba(255,255,255,.45);
+}
+
+h1 .gold{
+  color:#916019;
+}
+
+.line{
+  width:175px;
+  height:3px;
+  margin:18px 0 17px;
+  background:#a97929;
+}
+
+.verse{
+  color:#54215f;
+  font-size:clamp(18px,4.8vw,26px);
+  letter-spacing:.08em;
+}
+
+
+/* ===== BUTTONS ===== */
+
+.buttons{
+  display:flex;
+  gap:14px;
+  margin-top:28px;
+}
+
+.buttons a{
+  flex:1;
+  min-height:58px;
+  border-radius:999px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:clamp(17px,4.5vw,24px);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+
+.primary{
+  background:#713278;
+  color:white;
+  box-shadow:0 8px 20px rgba(70,30,70,.16);
+}
+
+.secondary{
+  color:#fff;
+  border:2px solid #8b1f72;
+  background:#8b1f72;
+}
+
+.buttons a:hover,
+.buttons a:focus{
+  transform:translateY(-5px);
+  box-shadow:0 12px 25px rgba(50,35,25,.20);
+}
+
+
+/* ===== SIGNATURE ===== */
+
+.signature{
+  position:absolute;
+  z-index:3;
+  left:7vw;
+  bottom:5%;
+  color:white;
+  text-shadow:0 2px 5px rgba(0,0,0,.35);
+}
+
+.signature div{
+  font-family:cursive;
+  font-style:italic;
+  font-size:clamp(28px,7vw,46px);
+}
+
+.signature small{
+  display:block;
+  margin-top:5px;
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  letter-spacing:.24em;
+}
+
+
+/* ===== 5 MAIN LINKS ===== */
+
+.quick-nav{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  width:100%;
+  padding:25px 7px 28px;
+  background:#faf5ea;
+  border-bottom:1px solid rgba(160,120,50,.15);
+}
+
+.quick-nav a{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:7px;
+  color:#594538;
+  font-size:clamp(11px,3vw,15px);
+  transition:transform .25s ease,color .25s ease;
+}
+
+.quick-nav b{
+  color:#a77a2c;
+  font-family:Arial,sans-serif;
+  font-size:clamp(27px,7vw,39px);
+  font-weight:400;
+  line-height:1;
+}
+
+.quick-nav a:hover,
+.quick-nav a:focus{
+  color:#713278;
+  transform:translateY(-5px);
+}
+
+
+/* ===== TODAY / PAPER FEEL ===== */
+
+.today{
+  padding:65px 6vw 80px;
+  min-height:900px;
+  background:
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(255,255,255,.70),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 88% 62%,
+      rgba(188,151,92,.10),
+      transparent 34%
+    ),
+    linear-gradient(
+      115deg,
+      #f1e7d6,
+      #fffaf0 48%,
+      #eee1cd
+    );
+}
+
+.section-title{
+  text-align:center;
+}
+
+.section-title small{
+  color:#a6782c;
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  letter-spacing:.32em;
+}
+
+.section-title h2{
+  margin:9px 0 0;
+  color:#683b68;
+  font-size:clamp(34px,9vw,50px);
+  font-weight:500;
+  letter-spacing:.10em;
+}
+
+.section-title i{
+  display:block;
+  width:70px;
+  height:2px;
+  margin:17px auto;
+  background:#b38636;
+}
+
+.section-title p{
+  margin:0;
+  color:#756a60;
+  font-size:clamp(15px,4vw,19px);
+  letter-spacing:.06em;
+}
+
+
+/* n8n 每日圖卡固定位置 */
+
+.daily-card{
+  width:100%;
+  max-width:620px;
+  aspect-ratio:4/5;
+  margin:40px auto 0;
+  padding:35px;
+  border-radius:7px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:rgba(255,250,240,.72);
+  border:1px solid rgba(169,121,41,.22);
+  box-shadow:0 18px 42px rgba(74,51,31,.10);
+}
+
+.daily-card small{
+  color:#a7792d;
+  font-family:Arial,sans-serif;
+  letter-spacing:.25em;
+}
+
+.daily-card h3{
+  margin:16px 0;
+  color:#663b66;
+  font-size:clamp(30px,8vw,45px);
+  font-weight:500;
+}
+
+.daily-card p{
+  margin:0;
+  color:#776b61;
+  line-height:1.8;
+}
+
+
+/* ===== SMALL PHONE ===== */
+
+@media(max-width:390px){
+
+  .hero-content{
+    left:6vw;
+    width:88%;
+  }
+
+  header{
+    padding-left:6vw;
+    padding-right:6vw;
+  }
+
+  .buttons{
+    gap:9px;
+  }
+
+  .buttons a{
+    font-size:17px;
+  }
+}
+
+/* ===== MOBILE HERO REFINEMENT v4 ===== */
+@media (max-width: 768px){
+
+  /* Logo：縮小，避免壓迫主標題 */
+  .logo{
+    width:136px;
+    height:auto;
+    object-fit:contain;
+  }
+
+  /* Header 保持 Logo 與選單左右配置 */
+  .hero header{
+    align-items:flex-start;
+  }
+
+  /* 主內容重新安排垂直空間 */
+  .hero-content{
+    padding-top:18px;
+  }
+
+  /* 英文品牌標語完整顯示 */
+  .eyebrow{
+    margin-bottom:14px;
+    font-size:clamp(10px,2.7vw,13px);
+    letter-spacing:.15em;
+    white-space:nowrap;
+  }
+
+  /* 中文主標題 */
+  .hero-content h1{
+    margin-top:0;
+    font-size:clamp(38px,10.5vw,54px);
+    line-height:1.28;
+    letter-spacing:.01em;
+  }
+
+}
+
+/* ===== HSLLLC MOBILE HERO v5 ===== */
+@media (max-width: 768px){
+
+  /* Hero 滿版 */
+  .hero{
+    min-height: 82svh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 背景滿版 */
+  .hero-bg{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  /* 左側柔光，讓中文字清楚但不遮住風景 */
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255,250,244,.78) 0%,
+        rgba(255,250,244,.52) 42%,
+        rgba(255,250,244,.10) 72%,
+        rgba(255,250,244,0) 100%
+      );
+    pointer-events:none;
+    z-index:1;
+  }
+
+  /* Header */
+  .hero header{
+    position:relative;
+    z-index:5;
+    width:100%;
+    padding:18px 6vw 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    box-sizing:border-box;
+  }
+
+  /* 透明 Logo */
+  .logo{
+    width:128px;
+    height:auto;
+    display:block;
+    object-fit:contain;
+    filter:drop-shadow(0 2px 5px rgba(255,255,255,.55));
+  }
+
+  /* 漢堡選單 */
+  .menu{
+    margin-top:7px;
+    width:42px;
+    height:42px;
+    position:relative;
+    z-index:6;
+  }
+
+  /* 主標 */
+  .hero-content{
+    position:absolute;
+    z-index:4;
+    left:7vw;
+    top:31%;
+    width:86%;
+    padding:0;
+  }
+
+  .hero-content h1{
+    margin:0;
+    font-size:clamp(38px,10.3vw,52px);
+    line-height:1.30;
+    letter-spacing:.02em;
+    font-weight:500;
+    color:#54244f;
+    text-shadow:
+      0 1px 0 rgba(255,255,255,.75),
+      0 3px 16px rgba(255,255,255,.45);
+  }
+
+  .hero-content h1 span{
+    display:block;
+    color:#54244f;
+  }
+
+  /* 金色細線 */
+  .hero-content .line{
+    width:72px;
+    height:2px;
+    margin:18px 0 13px;
+    background:#b58a46;
+  }
+
+  /* 經文 */
+  .verse{
+    font-size:17px;
+    letter-spacing:.12em;
+    color:#493d39;
+    margin-bottom:26px;
+  }
+
+  /* CTA */
+  .buttons{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+
+  .buttons a{
+    min-width:118px;
+    box-sizing:border-box;
+    padding:13px 18px;
+    border-radius:999px;
+    font-size:16px;
+    text-align:center;
+    white-space:nowrap;
+  }
+
+  /* 舊 Signature 強制隱藏 */
+  .signature{
+    display:none !important;
+  }
+}
+
+/* 小型手機 */
+@media (max-width:390px){
+  .logo{
+    width:116px;
+  }
+
+  .hero-content{
+    left:6vw;
+    width:88%;
+    top:30%;
+  }
+
+  .hero-content h1{
+    font-size:clamp(35px,10vw,44px);
+  }
+
+  .buttons{
+    gap:9px;
+  }
+
+  .buttons a{
+    min-width:112px;
+    padding:12px 15px;
+    font-size:15px;
+  }
+}
+
+/* ===== HSLLLC MOBILE HERO v6 ===== */
+@media (max-width:768px){
+
+  /* Logo */
+  .logo{
+    width:128px;
+    height:auto;
+    display:block;
+  }
+
+  /* 整組文字往下，讓出淡江大橋 */
+  .hero-content{
+    top:auto;
+    bottom:9%;
+    left:7vw;
+    width:86%;
+  }
+
+  /* 主標稍微縮小，第三行不再撞右側 */
+  .hero-content h1{
+    font-size:clamp(34px,8.7vw,46px);
+    line-height:1.28;
+    letter-spacing:0;
+  }
+
+  /* 第三行再收一點 */
+  .hero-content h1 span:nth-child(3){
+    font-size:.91em;
+    white-space:nowrap;
+  }
+
+  .hero-content .line{
+    margin:15px 0 11px;
+  }
+
+  .verse{
+    margin-bottom:20px;
+    font-size:16px;
+  }
+
+  .buttons a{
+    padding:12px 17px;
+  }
+}
+
+@media (max-width:390px){
+
+  .hero-content{
+    top:auto;
+    bottom:8%;
+  }
+
+  .hero-content h1{
+    font-size:clamp(32px,8.5vw,40px);
+  }
+
+  .hero-content h1 span:nth-child(3){
+    font-size:.90em;
+  }
+}
+
+/* ===== HERO v7 : verse + CTA lower ===== */
+@media (max-width:768px){
+
+  /* 經文區開始往下拉 */
+  .hero-content .line{
+    margin-top:42px;
+  }
+
+  .verse{
+    margin-bottom:24px;
+  }
+
+  /* CTA 稍微減薄 */
+  .buttons a{
+    padding:10px 17px;
+    min-height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+}
+
+@media (max-width:390px){
+  .hero-content .line{
+    margin-top:38px;
+  }
+}
+
+/* =========================================
+   HSLLLC DAILY SECTION v1
+   每日神話 / 每日靈泉 / 講道影音
+   ========================================= */
+
+.daily-section{
+  position:relative;
+  z-index:10;
+  background:#faf7f2;
+  padding:58px 6vw 70px;
+  overflow:hidden;
+}
+
+/* 很淡的紫色光暈 */
+.daily-section::before{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  top:-120px;
+  right:-120px;
+  background:rgba(116,55,112,.07);
+  pointer-events:none;
+}
+
+.section-heading{
+  position:relative;
+  z-index:2;
+  margin-bottom:34px;
+}
+
+.section-heading small{
+  display:block;
+  margin-bottom:10px;
+  font-size:11px;
+  letter-spacing:.22em;
+  color:#b08a4d;
+}
+
+.section-heading h2{
+  margin:0;
+  max-width:320px;
+  font-size:28px;
+  line-height:1.45;
+  font-weight:500;
+  letter-spacing:.04em;
+  color:#54244f;
+}
+
+.section-heading i{
+  display:block;
+  width:46px;
+  height:2px;
+  margin:17px 0 15px;
+  background:#b58a46;
+}
+
+.section-heading p{
+  margin:0;
+  font-size:15px;
+  line-height:1.8;
+  letter-spacing:.04em;
+  color:#776d68;
+}
+
+
+/* 三張內容卡 */
+
+.daily-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:15px;
+}
+
+.daily-item{
+  position:relative;
+  display:block;
+  min-height:178px;
+  padding:25px 24px 23px;
+
+  text-decoration:none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.96),
+      rgba(249,244,238,.92)
+    );
+
+  border:1px solid rgba(181,138,70,.25);
+  border-radius:22px;
+
+  box-shadow:
+    0 10px 30px rgba(72,45,62,.06);
+
+  overflow:hidden;
+
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease,
+    border-color .28s ease;
+}
+
+.daily-item::after{
+  content:"";
+  position:absolute;
+  right:-38px;
+  bottom:-52px;
+  width:135px;
+  height:135px;
+  border-radius:50%;
+  background:rgba(93,35,87,.045);
+}
+
+.daily-item:active{
+  transform:scale(.985);
+}
+
+.daily-number{
+  position:absolute;
+  top:17px;
+  right:21px;
+
+  font-family:Georgia,serif;
+  font-size:42px;
+  font-weight:400;
+  line-height:1;
+
+  color:rgba(84,36,79,.09);
+}
+
+.daily-item small{
+  display:block;
+  margin-bottom:8px;
+
+  font-size:10px;
+  letter-spacing:.18em;
+
+  color:#b08a4d;
+}
+
+.daily-item h3{
+  margin:0 0 9px;
+
+  font-size:25px;
+  line-height:1.3;
+  font-weight:500;
+  letter-spacing:.08em;
+
+  color:#54244f;
+}
+
+.daily-item p{
+  margin:0 0 19px;
+
+  font-size:14px;
+  line-height:1.65;
+  letter-spacing:.03em;
+
+  color:#766d68;
+}
+
+.daily-item b{
+  position:relative;
+  z-index:2;
+
+  font-size:13px;
+  font-weight:400;
+  letter-spacing:.06em;
+
+  color:#8b6836;
+}
+
+
+/* 手機較小尺寸 */
+
+@media (max-width:390px){
+
+  .daily-section{
+    padding:
+      50px
+      6vw
+      60px;
+  }
+
+  .section-heading h2{
+    font-size:25px;
+  }
+
+  .daily-item{
+    min-height:166px;
+    padding:22px 21px;
+    border-radius:20px;
+  }
+
+  .daily-item h3{
+    font-size:23px;
+  }
+
+  .daily-number{
+    font-size:38px;
+  }
+}
+
+
+/* 桌機 */
+
+@media (min-width:769px){
+
+  .daily-section{
+    padding:
+      90px
+      max(7vw,60px)
+      100px;
+  }
+
+  .section-heading{
+    max-width:600px;
+    margin-bottom:45px;
+  }
+
+  .section-heading h2{
+    max-width:none;
+    font-size:38px;
+  }
+
+  .daily-grid{
+    grid-template-columns:
+      repeat(3,1fr);
+
+    gap:22px;
+  }
+
+  .daily-item{
+    min-height:220px;
+    padding:30px;
+  }
+
+  .daily-item:hover{
+    transform:translateY(-6px);
+
+    border-color:
+      rgba(181,138,70,.55);
+
+    box-shadow:
+      0 18px 38px
+      rgba(72,45,62,.11);
+  }
+}
+
+
+/* =========================================
+   HSLLLC QUICK ACCESS v2
+   ========================================= */
+
+.home-quick{
+  position:relative;
+  z-index:12;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+
+  padding:18px 4vw 22px;
+
+  background:#faf7f2;
+  border-bottom:1px solid rgba(181,138,70,.15);
+}
+
+.quick-item{
+  min-width:0;
+  min-height:118px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  padding:13px 5px;
+
+  text-align:center;
+  text-decoration:none;
+
+  background:rgba(255,255,255,.72);
+
+  border:1px solid rgba(181,138,70,.20);
+  border-radius:15px;
+
+  box-shadow:
+    0 5px 16px rgba(72,45,62,.045);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.quick-item:active{
+  transform:scale(.97);
+}
+
+.quick-icon{
+  height:34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:7px;
+
+  font-family:Georgia,serif;
+  font-size:30px;
+  line-height:1;
+  font-weight:300;
+
+  color:#b17c25;
+}
+
+.quick-item strong{
+  display:block;
+
+  margin-bottom:5px;
+
+  font-size:15px;
+  line-height:1.3;
+  font-weight:500;
+  letter-spacing:.03em;
+
+  color:#4f3547;
+}
+
+.quick-item small{
+  display:block;
+
+  font-size:10px;
+  line-height:1.4;
+  letter-spacing:.02em;
+
+  color:#978b83;
+}
+
+
+/* 小手機 */
+
+@media(max-width:390px){
+
+  .home-quick{
+    gap:8px;
+    padding:
+      16px
+      3.5vw
+      20px;
+  }
+
+  .quick-item{
+    min-height:108px;
+    padding:11px 4px;
+  }
+
+  .quick-icon{
+    font-size:27px;
+  }
+
+  .quick-item strong{
+    font-size:14px;
+  }
+
+  .quick-item small{
+    font-size:9px;
+  }
+}
+
+
+/* 桌機：六個橫排 */
+
+@media(min-width:769px){
+
+  .home-quick{
+    grid-template-columns:repeat(6,1fr);
+
+    gap:12px;
+
+    padding:
+      24px
+      max(4vw,40px)
+      28px;
+  }
+
+  .quick-item{
+    min-height:135px;
+  }
+
+  .quick-item:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+      0 12px 25px
+      rgba(72,45,62,.09);
+  }
+}
+
+
+/* HSLLLC GOLD LINE ICONS */
+
+.quick-icon svg{
+  width:34px;
+  height:34px;
+
+  fill:none;
+  stroke:#b17c25;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+
+/* =========================================
+   HSLLLC PHOTO CONTENT CARDS v1
+   ========================================= */
+
+.daily-grid{
+  gap:20px;
+}
+
+.daily-item{
+  padding:0;
+  min-height:0;
+  background:#fffdf9;
+  border:1px solid rgba(181,138,70,.28);
+  border-radius:22px;
+  overflow:hidden;
+
+  box-shadow:
+    0 12px 30px rgba(72,45,62,.07);
+}
+
+/* 關閉舊卡片右下裝飾圓 */
+.daily-item::after{
+  display:none;
+}
+
+/* 照片 */
+
+.daily-photo{
+  position:relative;
+  width:100%;
+  height:210px;
+  overflow:hidden;
+  background:#eee8df;
+}
+
+.daily-photo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(45,25,35,0) 50%,
+      rgba(45,25,35,.18) 100%
+    );
+}
+
+.daily-photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+
+  transition:transform .5s ease;
+}
+
+
+/* 下半部文字 */
+
+.daily-body{
+  position:relative;
+  min-height:170px;
+  padding:24px 25px 26px;
+  box-sizing:border-box;
+  background:#fffdf9;
+}
+
+.daily-body .daily-number{
+  position:absolute;
+  top:19px;
+  right:22px;
+
+  font-family:Georgia,serif;
+  font-size:45px;
+  line-height:1;
+
+  color:rgba(84,36,79,.09);
+}
+
+.daily-body small{
+  display:block;
+  margin:0 0 8px;
+
+  font-size:10px;
+  letter-spacing:.19em;
+
+  color:#b08a4d;
+}
+
+.daily-body h3{
+  margin:0 0 9px;
+
+  font-size:26px;
+  line-height:1.3;
+  font-weight:500;
+  letter-spacing:.07em;
+
+  color:#54244f;
+}
+
+.daily-body p{
+  margin:0 0 18px;
+
+  font-size:14px;
+  line-height:1.7;
+
+  color:#786f69;
+}
+
+.daily-body b{
+  display:inline-block;
+
+  font-size:13px;
+  font-weight:400;
+  letter-spacing:.05em;
+
+  color:#9b7338;
+}
+
+
+/* 手機 */
+
+@media(max-width:390px){
+
+  .daily-photo{
+    height:190px;
+  }
+
+  .daily-body{
+    min-height:160px;
+    padding:22px 21px 24px;
+  }
+
+  .daily-body h3{
+    font-size:24px;
+  }
+
+}
+
+
+/* 桌機 */
+
+@media(min-width:769px){
+
+  .daily-photo{
+    height:230px;
+  }
+
+  .daily-body{
+    min-height:190px;
+    padding:27px 28px 30px;
+  }
+
+  .daily-item:hover .daily-photo img{
+    transform:scale(1.035);
+  }
+
+}
+
+
+/* =========================================
+   PHOTO IMAGE DISPLAY FIX v2
+   ========================================= */
+
+.daily-item .daily-photo{
+  display:block !important;
+  position:relative !important;
+  width:100% !important;
+  height:210px !important;
+  overflow:hidden !important;
+  background:#eee8df !important;
+}
+
+.daily-item .daily-photo img{
+  display:block !important;
+  position:absolute !important;
+  inset:0 !important;
+
+  width:100% !important;
+  height:100% !important;
+
+  max-width:none !important;
+  max-height:none !important;
+
+  object-fit:cover !important;
+  object-position:center !important;
+
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:none !important;
+}
+
+@media(max-width:390px){
+  .daily-item .daily-photo{
+    height:190px !important;
+  }
+}
+
+
+/* =========================================
+   HSLLLC TOGETHER / LIFE SECTION v1
+   ========================================= */
+
+.life-section{
+  position:relative;
+  padding:72px 6vw 82px;
+  background:#f7f1e8;
+  overflow:hidden;
+}
+
+.life-section::before{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  right:-120px;
+  top:-100px;
+  border-radius:50%;
+  background:rgba(84,36,79,.035);
+}
+
+.life-heading{
+  position:relative;
+  z-index:2;
+  margin-bottom:34px;
+}
+
+.life-heading small{
+  display:block;
+  margin-bottom:14px;
+  font-size:11px;
+  letter-spacing:.24em;
+  color:#b58a46;
+}
+
+.life-heading h2{
+  margin:0;
+  max-width:520px;
+  font-size:34px;
+  line-height:1.35;
+  font-weight:500;
+  letter-spacing:.03em;
+  color:#54244f;
+}
+
+.life-heading i{
+  display:block;
+  width:64px;
+  height:2px;
+  margin:20px 0 18px;
+  background:#b58a46;
+}
+
+.life-heading p{
+  margin:0;
+  font-size:15px;
+  line-height:1.8;
+  color:#80756f;
+}
+
+
+/* 三張入口 */
+
+.life-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:15px;
+}
+
+.life-card{
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:150px;
+  padding:25px 26px;
+  box-sizing:border-box;
+  overflow:hidden;
+
+  text-decoration:none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.96),
+      rgba(255,251,245,.90)
+    );
+
+  border:1px solid rgba(181,138,70,.28);
+  border-radius:20px;
+
+  box-shadow:
+    0 10px 25px rgba(72,45,62,.055);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.life-card::after{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  right:-35px;
+  bottom:-55px;
+  border-radius:50%;
+  background:rgba(84,36,79,.035);
+}
+
+.life-card-text{
+  position:relative;
+  z-index:2;
+}
+
+.life-card small{
+  display:block;
+  margin-bottom:6px;
+
+  font-size:9px;
+  letter-spacing:.20em;
+
+  color:#b08a4d;
+}
+
+.life-card h3{
+  margin:0 0 6px;
+
+  font-size:25px;
+  line-height:1.35;
+  font-weight:500;
+  letter-spacing:.06em;
+
+  color:#54244f;
+}
+
+.life-card p{
+  margin:0 0 12px;
+
+  font-size:13px;
+  line-height:1.6;
+
+  color:#817771;
+}
+
+.life-card span{
+  font-size:12px;
+  letter-spacing:.04em;
+  color:#9b7338;
+}
+
+.life-number{
+  position:absolute;
+  z-index:1;
+  right:18px;
+  top:16px;
+
+  font-family:Georgia,serif;
+  font-size:42px;
+  line-height:1;
+
+  color:rgba(84,36,79,.075);
+}
+
+
+/* 每張有一點不同，但維持同一品牌 */
+
+.life-gathering{
+  border-left:3px solid rgba(181,138,70,.70);
+}
+
+.life-family{
+  border-left:3px solid rgba(84,36,79,.42);
+}
+
+.life-events{
+  border-left:3px solid rgba(181,138,70,.70);
+}
+
+
+/* 桌機 */
+
+@media(min-width:769px){
+
+  .life-section{
+    padding:
+      90px
+      max(7vw,60px)
+      100px;
+  }
+
+  .life-heading{
+    max-width:620px;
+    margin-bottom:42px;
+  }
+
+  .life-heading h2{
+    font-size:38px;
+  }
+
+  .life-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+
+  .life-card{
+    min-height:190px;
+    padding:30px;
+  }
+
+  .life-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+      0 17px 34px
+      rgba(72,45,62,.09);
+  }
+}
+
+
+/* ===== HSLLLC MOBILE POLISH v1 ===== */
+
+@media (max-width:768px){
+
+  /* 今日內容主標題：手機固定一行 */
+  .section-heading h2{
+    white-space:nowrap;
+    font-size:clamp(25px,6.4vw,34px);
+    letter-spacing:0;
+    line-height:1.25;
+  }
+
+  /* 左上 Logo */
+  .hero .logo{
+    width:150px;
+    height:auto;
+    object-fit:contain;
+    display:block;
+  }
+}
+
+@media (max-width:390px){
+  .section-heading h2{
+    font-size:24px;
+  }
+
+  .hero .logo{
+    width:140px;
+  }
+}
+
+
+/* ===== FINAL MOBILE HEADING FIX v10 ===== */
+
+@media (max-width:768px){
+
+  section.daily-section .section-heading{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  section.daily-section .section-heading h2{
+    display:block !important;
+    width:100% !important;
+    max-width:none !important;
+
+    font-size:clamp(22px,5.8vw,30px) !important;
+    line-height:1.3 !important;
+    letter-spacing:-0.03em !important;
+
+    white-space:nowrap !important;
+    word-break:keep-all !important;
+    overflow:visible !important;
+  }
+
+  .hero header .logo{
+    display:block !important;
+    width:150px !important;
+    height:auto !important;
+    max-width:42vw !important;
+    object-fit:contain !important;
+  }
+}
+
+@media (max-width:390px){
+
+  section.daily-section .section-heading h2{
+    font-size:21px !important;
+  }
+
+}
+
+/* ===== MOBILE HEADER LOGO v11 ===== */
+
+@media (max-width:768px){
+
+  .hero header{
+    overflow:visible;
+  }
+
+  .hero header .logo{
+    width:180px !important;
+    max-width:46vw !important;
+    height:auto !important;
+    object-fit:contain !important;
+    object-position:left top !important;
+  }
+}
+
+@media (max-width:390px){
+
+  .hero header .logo{
+    width:165px !important;
+    max-width:45vw !important;
+  }
+
+}
+
+/* HSLLLC HORIZONTAL HEADER LOGO v12 */
+@media (max-width:768px){
+  .hero header .logo{
+    width:48vw !important;
+    max-width:330px !important;
+    height:auto !important;
+    object-fit:contain !important;
+    display:block !important;
+  }
+}
+
+@media (max-width:390px){
+  .hero header .logo{
+    width:50vw !important;
+    max-width:195px !important;
+  }
+}
+
+/* ==================================================
+   HSLLLC LIFE SECTION MOBILE FIX v2
+   修正手機版左側文字被裁切
+================================================== */
+
+@media (max-width:768px){
+
+  .life-section{
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+    padding:64px 0 70px !important;
+  }
+
+  .life-section .section-heading{
+    width:auto !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:0 28px !important;
+    box-sizing:border-box !important;
+    transform:none !important;
+  }
+
+  .life-section .section-heading small,
+  .life-section .section-heading h2,
+  .life-section .section-heading p{
+    margin-left:0 !important;
+    transform:none !important;
+  }
+
+  .life-section .section-heading small{
+    display:block !important;
+    font-size:13px !important;
+    letter-spacing:.16em !important;
+  }
+
+  .life-section .section-heading h2{
+    font-size:32px !important;
+    line-height:1.35 !important;
+    margin-top:18px !important;
+  }
+
+  .life-section .section-heading p{
+    font-size:17px !important;
+    line-height:1.8 !important;
+    margin-top:18px !important;
+  }
+
+  .life-grid{
+    width:auto !important;
+    margin:38px 0 0 !important;
+    padding:0 28px !important;
+    box-sizing:border-box !important;
+  }
+
+  .life-card{
+    width:100% !important;
+    box-sizing:border-box !important;
+  }
+}
+
+@media (max-width:390px){
+
+  .life-section .section-heading,
+  .life-grid{
+    padding-left:22px !important;
+    padding-right:22px !important;
+  }
+
+  .life-section .section-heading h2{
+    font-size:29px !important;
+  }
+}
+
+/* CARE SECTION MOBILE v1 */
+.care-section{
+  padding:72px 22px 82px;
+  background:#f8f1e7;
+  box-sizing:border-box;
+}
+.care-heading{margin-bottom:38px}
+.care-heading small{
+  color:#b78a3d;
+  font-size:12px;
+  letter-spacing:.18em;
+}
+.care-heading h2{
+  color:#68215e;
+  font-size:29px;
+  font-weight:500;
+  margin:18px 0;
+}
+.care-heading i{
+  display:block;
+  width:56px;
+  height:3px;
+  background:#bd8e39;
+  margin:22px 0;
+}
+.care-heading p{
+  color:#8c827b;
+  font-size:16px;
+  line-height:1.8;
+}
+.care-main{
+  position:relative;
+  display:block;
+  padding:34px 26px;
+  min-height:285px;
+  border-radius:28px;
+  background:linear-gradient(145deg,#68215e,#8b317f);
+  text-decoration:none;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+.care-main small{color:#e4c78f;letter-spacing:.16em}
+.care-main h3{
+  color:white;
+  font-size:31px;
+  font-weight:500;
+  margin:20px 0 15px;
+}
+.care-main p{
+  color:rgba(255,255,255,.78);
+  line-height:1.8;
+}
+.care-main span{
+  display:block;
+  color:#f0d39a;
+  margin-top:30px;
+}
+.care-main-number{
+  position:absolute;
+  right:22px;
+  top:15px;
+  font-size:72px;
+  color:rgba(255,255,255,.08);
+}
+.care-small-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:14px;
+}
+.care-small{
+  display:block;
+  padding:23px 17px;
+  min-height:245px;
+  border-radius:24px;
+  background:#fffdf9;
+  border:1px solid rgba(181,139,73,.22);
+  text-decoration:none;
+  box-sizing:border-box;
+}
+.care-small small{
+  color:#b48a47;
+  font-size:10px;
+  letter-spacing:.13em;
+}
+.care-icon{
+  width:44px;
+  height:44px;
+  margin:24px 0 18px;
+  border:1px solid rgba(116,37,106,.2);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#74256a;
+  font-size:22px;
+}
+.care-small h3{
+  color:#68215e;
+  font-size:21px;
+  font-weight:500;
+  margin:0 0 10px;
+}
+.care-small p{
+  color:#91877f;
+  font-size:14px;
+  line-height:1.6;
+}
+.care-small span{
+  display:block;
+  color:#ae8138;
+  font-size:13px;
+  margin-top:18px;
+}
+
+/* ==================================================
+   HSLLLC LIFE CARD IMAGES v1
+   右側圖片 + 漸層融合
+================================================== */
+
+.life-card{
+  position:relative !important;
+  overflow:hidden !important;
+  isolation:isolate;
+}
+
+.life-card::before{
+  content:"";
+  position:absolute;
+  z-index:-2;
+  top:0;
+  right:0;
+  width:42%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* 圖片與文字區的羽化融合 */
+.life-card::after{
+  content:"" !important;
+  position:absolute !important;
+  z-index:-1 !important;
+  top:0 !important;
+  right:0 !important;
+  width:62% !important;
+  height:100% !important;
+  pointer-events:none;
+  background:linear-gradient(
+    90deg,
+    #fffdf9 0%,
+    rgba(255,253,249,.97) 18%,
+    rgba(255,253,249,.78) 40%,
+    rgba(255,253,249,.25) 68%,
+    rgba(255,253,249,0) 100%
+  ) !important;
+}
+
+/* 01 聚會資訊 */
+.life-card:nth-child(1)::before{
+  background-image:url('/prototype/ui-images/gathering.png');
+}
+
+/* 02 家遊趣 */
+.life-card:nth-child(2)::before{
+  background-image:url('/prototype/ui-images/family-life.png');
+}
+
+/* 03 加油去 */
+.life-card:nth-child(3)::before{
+  background-image:url('/prototype/ui-images/events.png');
+}
+
+/* 文字固定在左側安全區 */
+.life-card .life-card-text{
+  position:relative !important;
+  z-index:2 !important;
+  width:63% !important;
+  max-width:63% !important;
+  box-sizing:border-box !important;
+}
+
+@media (max-width:390px){
+
+  .life-card::before{
+    width:40%;
+  }
+
+  .life-card::after{
+    width:64% !important;
+  }
+
+  .life-card .life-card-text{
+    width:64% !important;
+    max-width:64% !important;
+  }
+
+  .life-card .life-card-text h3{
+    white-space:nowrap;
+  }
+}
+
+
+/* ==================================================
+   HSLLLC LIFE CARDS v15
+   45%文字安全區 + 柔和羽化 + 40%清晰圖片
+================================================== */
+
+@media (max-width:768px){
+
+  /* 修正整區左側截字 */
+  .life-section{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+  }
+
+  .life-section .section-heading,
+  .life-grid{
+    width:auto !important;
+    max-width:none !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    transform:none !important;
+    box-sizing:border-box !important;
+  }
+
+  .life-section .section-heading{
+    padding-left:22px !important;
+    padding-right:22px !important;
+  }
+
+  .life-grid{
+    padding-left:22px !important;
+    padding-right:22px !important;
+  }
+
+  /* 卡片 */
+  .life-card{
+    width:100% !important;
+    max-width:100% !important;
+    min-height:290px !important;
+    padding:38px 28px !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+    isolation:isolate !important;
+  }
+
+  /* 右側照片：保留足夠面積 */
+  .life-card::before{
+    content:"" !important;
+    position:absolute !important;
+    z-index:0 !important;
+    top:0 !important;
+    right:0 !important;
+    width:48% !important;
+    height:100% !important;
+    background-size:cover !important;
+    background-position:center !important;
+    background-repeat:no-repeat !important;
+    opacity:1 !important;
+  }
+
+  /* 漸層只負責接縫，不覆蓋整張照片 */
+  .life-card::after{
+    content:"" !important;
+    position:absolute !important;
+    z-index:1 !important;
+    top:0 !important;
+    right:34% !important;
+    width:25% !important;
+    height:100% !important;
+    pointer-events:none !important;
+
+    background:linear-gradient(
+      90deg,
+      rgba(255,253,249,1) 0%,
+      rgba(255,253,249,.96) 22%,
+      rgba(255,253,249,.72) 48%,
+      rgba(255,253,249,.32) 74%,
+      rgba(255,253,249,0) 100%
+    ) !important;
+  }
+
+  /* 文字安全區 */
+  .life-card .life-card-text{
+    position:relative !important;
+    z-index:3 !important;
+    width:56% !important;
+    max-width:56% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+  }
+
+  .life-card .life-card-text h3{
+    white-space:nowrap !important;
+  }
+
+  .life-card .life-card-text p{
+    line-height:1.65 !important;
+  }
+
+  .life-number{
+    z-index:2 !important;
+  }
+}
+
+/* 窄手機再多保留一點文字空間 */
+@media (max-width:390px){
+
+  .life-section .section-heading,
+  .life-grid{
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+
+  .life-card{
+    padding-left:26px !important;
+    padding-right:22px !important;
+  }
+
+  .life-card::before{
+    width:46% !important;
+  }
+
+  .life-card::after{
+    right:32% !important;
+    width:27% !important;
+  }
+
+  .life-card .life-card-text{
+    width:58% !important;
+    max-width:58% !important;
+  }
+}
+
+
+/* ==================================================
+   HSLLLC LIFE CARDS v16
+   使用原圖自身羽化，不再二次覆蓋漸層
+================================================== */
+
+@media (max-width:768px){
+
+  .life-card{
+    position:relative !important;
+    overflow:hidden !important;
+    min-height:290px !important;
+  }
+
+  /* 圖片擴大，讓真正內容看得見 */
+  .life-card::before{
+    content:"" !important;
+    position:absolute !important;
+    z-index:0 !important;
+    top:0 !important;
+    right:0 !important;
+
+    width:58% !important;
+    height:100% !important;
+
+    background-size:cover !important;
+    background-position:center right !important;
+    background-repeat:no-repeat !important;
+
+    opacity:1 !important;
+  }
+
+  /* 關掉上一版額外的紫白漸層 */
+  .life-card::after{
+    content:none !important;
+    display:none !important;
+    background:none !important;
+  }
+
+  /* 文字維持安全範圍 */
+  .life-card .life-card-text{
+    position:relative !important;
+    z-index:3 !important;
+
+    width:58% !important;
+    max-width:58% !important;
+
+    box-sizing:border-box !important;
+  }
+
+  .life-card .life-card-text h3{
+    white-space:nowrap !important;
+  }
+
+  .life-number{
+    z-index:2 !important;
+  }
+}
+
+@media (max-width:390px){
+
+  .life-card::before{
+    width:60% !important;
+  }
+
+  .life-card .life-card-text{
+    width:60% !important;
+    max-width:60% !important;
+  }
+}
+
+
+/* ==================================================
+   HSLLLC LIFE SECTION - FINAL MOBILE LAYOUT
+   統一 section / heading / grid 手機水平座標
+================================================== */
+
+@media (max-width:768px){
+
+  .life-section{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 !important;
+    padding:64px 22px 70px !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+  }
+
+  .life-section .section-heading{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 0 38px 0 !important;
+    padding:0 !important;
+    box-sizing:border-box !important;
+    transform:none !important;
+  }
+
+  .life-section .section-heading small,
+  .life-section .section-heading h2,
+  .life-section .section-heading p{
+    margin-left:0 !important;
+    padding-left:0 !important;
+    transform:none !important;
+  }
+
+  .life-section .section-heading h2{
+    font-size:29px !important;
+    line-height:1.35 !important;
+    white-space:nowrap !important;
+  }
+
+  .life-grid{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    box-sizing:border-box !important;
+    transform:none !important;
+  }
+
+  .life-card{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    box-sizing:border-box !important;
+  }
+}
+
+@media (max-width:390px){
+
+  .life-section{
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+
+  .life-section .section-heading,
+  .life-grid{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .life-section .section-heading h2{
+    font-size:28px !important;
+  }
+}
+
+
+/* ==================================================
+   HSLLLC LIFE IMAGE BLEND v18
+   保留 v17 版面，只修照片融合
+================================================== */
+
+@media (max-width:768px){
+
+  .life-card{
+    padding-left:28px !important;
+    padding-right:24px !important;
+  }
+
+  /* 照片區：右側約 45%，左緣自然羽化 */
+  .life-card::before{
+    content:"" !important;
+    display:block !important;
+    position:absolute !important;
+    top:0 !important;
+    right:0 !important;
+    width:48% !important;
+    height:100% !important;
+    z-index:1 !important;
+
+    background-size:cover !important;
+    background-position:center !important;
+    background-repeat:no-repeat !important;
+
+    opacity:1 !important;
+
+    -webkit-mask-image:linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0,0,0,.18) 10%,
+      rgba(0,0,0,.72) 25%,
+      #000 40%,
+      #000 100%
+    ) !important;
+
+    mask-image:linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0,0,0,.18) 10%,
+      rgba(0,0,0,.72) 25%,
+      #000 40%,
+      #000 100%
+    ) !important;
+  }
+
+  /* 禁止舊的第二層漸層 */
+  .life-card::after{
+    content:none !important;
+    display:none !important;
+  }
+
+  /* 文字永遠在圖片上方，但限制安全寬度 */
+  .life-card .life-card-text{
+    position:relative !important;
+    z-index:3 !important;
+    width:54% !important;
+    max-width:54% !important;
+    min-width:0 !important;
+  }
+
+  .life-card .life-card-text p{
+    width:100% !important;
+    max-width:100% !important;
+    white-space:normal !important;
+    overflow-wrap:normal !important;
+  }
+
+  .life-card .life-card-text h3{
+    white-space:nowrap !important;
+  }
+}
+
+@media (max-width:390px){
+
+  .life-card{
+    padding-left:26px !important;
+  }
+
+  .life-card::before{
+    width:47% !important;
+  }
+
+  .life-card .life-card-text{
+    width:55% !important;
+    max-width:55% !important;
+  }
+}
+
+
+/* LIFE CARD COMPACT MOBILE v19 */
+@media (max-width:768px){
+
+  .life-grid{
+    gap:16px !important;
+  }
+
+  .life-card{
+    min-height:0 !important;
+    height:220px !important;
+    padding:24px 22px 22px 26px !important;
+    border-radius:22px !important;
+  }
+
+  .life-card .life-card-text{
+    width:58% !important;
+    max-width:58% !important;
+  }
+
+  .life-card .life-card-text small{
+    font-size:11px !important;
+    letter-spacing:.16em !important;
+  }
+
+  .life-card .life-card-text h3{
+    font-size:27px !important;
+    line-height:1.2 !important;
+    margin:12px 0 10px !important;
+  }
+
+  .life-card .life-card-text p{
+    font-size:15px !important;
+    line-height:1.55 !important;
+    margin:0 0 18px !important;
+  }
+
+  .life-card .life-card-text span{
+    font-size:14px !important;
+  }
+
+  .life-card::before{
+    width:43% !important;
+  }
+}
+
+@media (max-width:390px){
+
+  .life-card{
+    height:205px !important;
+    padding:22px 18px 20px 24px !important;
+  }
+
+  .life-card .life-card-text h3{
+    font-size:25px !important;
+  }
+}
+
+/* LIFE CARD FINAL PROPORTION v20 */
+@media (max-width:768px){
+
+  .life-card .life-card-text{
+    width:62% !important;
+    max-width:62% !important;
+  }
+
+  .life-card::before{
+    width:39% !important;
+
+    -webkit-mask-image:linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0,0,0,.55) 12%,
+      #000 25%,
+      #000 100%
+    ) !important;
+
+    mask-image:linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0,0,0,.55) 12%,
+      #000 25%,
+      #000 100%
+    ) !important;
+  }
+}
+
+@media (max-width:390px){
+  .life-card .life-card-text{
+    width:63% !important;
+    max-width:63% !important;
+  }
+
+  .life-card::before{
+    width:38% !important;
+  }
+}
+
+/* LIFE CARD v21 - NARROW BLEND + TEXT FIX */
+@media (max-width:768px){
+
+  /* 讓文字多取得一些真正可用空間 */
+  .life-card .life-card-text{
+    width:66% !important;
+    max-width:66% !important;
+  }
+
+  /* 圖片真正約佔右側 1/3 */
+  .life-card::before{
+    width:36% !important;
+
+    -webkit-mask-image:linear-gradient(
+      to right,
+      transparent 0%,
+      #000 18%,
+      #000 100%
+    ) !important;
+
+    mask-image:linear-gradient(
+      to right,
+      transparent 0%,
+      #000 18%,
+      #000 100%
+    ) !important;
+  }
+
+  /* 說明文字保持一行 */
+  .life-card .life-card-text p{
+    white-space:nowrap !important;
+    font-size:14px !important;
+    letter-spacing:-0.02em !important;
+  }
+}
+
+@media (max-width:390px){
+
+  .life-card .life-card-text{
+    width:67% !important;
+    max-width:67% !important;
+  }
+
+  .life-card::before{
+    width:35% !important;
+  }
+
+  .life-card .life-card-text p{
+    font-size:13.5px !important;
+  }
+}
+
+/* ===== HERO FINAL 2026-09-11 ===== */
+
+/* 經文與 CI 已經直接存在 Hero 圖片內，
+   網頁只保留真正可點擊的 UI */
+
+.hero-content{
+  position:absolute;
+  left:5vw;
+  right:auto;
+  bottom:4.5%;
+  width:62%;
+  z-index:5;
+}
+
+.hero-content .buttons{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  align-items:center;
+  gap:12px;
+  margin:0;
+}
+
+.hero-content .buttons a{
+  flex:1 1 0;
+  min-width:0;
+  min-height:54px;
+  padding:10px 14px;
+  white-space:nowrap;
+  font-size:clamp(15px,4vw,20px);
+}
+
+@media(max-width:768px){
+  .hero-content{
+    left:5vw;
+    bottom:4.5%;
+    width:62%;
+  }
+
+  .hero-content .buttons{
+    gap:10px;
+  }
+}
+
+@media(max-width:390px){
+  .hero-content{
+    left:5vw;
+    bottom:4%;
+    width:64%;
+  }
+
+  .hero-content .buttons a{
+    min-height:50px;
+    padding:8px 9px;
+    font-size:15px;
+  }
+}
+
+/* ===== END HERO FINAL ===== */
+
+
+/* ===== HERO CLEANUP FINAL ===== */
+
+/* Hero 圖已內建正式 CI，不再顯示網頁 Logo */
+.hero header .logo{
+  display:none !important;
+}
+
+/* Hero 圖已完成光影，不再疊加舊白色柔光遮罩 */
+.hero .soft-light{
+  display:none !important;
+}
+
+/* ===== END HERO CLEANUP ===== */
+
+
+/* ===== HERO UI FINAL 50 / 50 ===== */
+.hero-content{
+  left:5% !important;
+  right:5% !important;
+  bottom:3.5% !important;
+  width:90% !important;
+}
+
+.hero-content .buttons{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:14px !important;
+  width:100% !important;
+  margin:0 !important;
+}
+
+.hero-content .buttons a{
+  width:100% !important;
+  min-width:0 !important;
+  box-sizing:border-box !important;
+  text-align:center !important;
+}
+
+@media(max-width:390px){
+  .hero-content{
+    left:4% !important;
+    right:4% !important;
+    width:92% !important;
+    bottom:3.5% !important;
+  }
+
+  .hero-content .buttons{
+    gap:10px !important;
+  }
+}
+/* ===== END HERO UI FINAL ===== */
+
+
+
+
+
+
+
+
+
+/* ===== HERO FINAL CLEANUP 20260912 ===== */
+
+/* Hero 定稿圖已內含 CI，不再疊加網站 Logo */
+.hero header .logo{
+  display:none !important;
+}
+
+/* 漢堡固定右上，不與 CI 重疊 */
+.hero header{
+  position:absolute !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  width:100% !important;
+  z-index:30 !important;
+  pointer-events:none !important;
+}
+
+.hero header .menu{
+  display:flex !important;
+  position:absolute !important;
+  top:24px !important;
+  right:6vw !important;
+  left:auto !important;
+  margin:0 !important;
+  z-index:31 !important;
+  pointer-events:auto !important;
+}
+
+/* 移除額外白光層 */
+.hero .soft-light{
+  display:none !important;
+}
+
+/* Hero 使用原圖亮度，不再額外增亮 */
+.hero-bg{
+  filter:brightness(.88) saturate(.96) !important;
+}
+
+@media (max-width:768px){
+  .hero header .menu{
+    top:24px !important;
+    right:6vw !important;
+    left:auto !important;
+  }
+}
+
+
+/* ===== HERO APPROVED FINAL IMAGE 20260912 ===== */
+
+.hero-bg{
+  filter:none !important;
+}
+
+.hero .soft-light{
+  display:none !important;
+}
+
+/* CI 已包含於 Hero 圖，不重複顯示 HTML Logo */
+.hero header .logo{
+  display:none !important;
+}
+
+/* 網站漢堡選單固定右上 */
+.hero header .menu{
+  display:flex !important;
+  position:absolute !important;
+  top:24px !important;
+  right:6vw !important;
+  left:auto !important;
+  z-index:31 !important;
+}
+
+
+/* ===== HERO LIGHT FINAL TUNING 20260912 ===== */
+/* 只降低 Hero 圖片曝光，不動漢堡、CI、文字、按鈕位置 */
+.hero-bg{
+  filter: brightness(.82) saturate(.94) !important;
+}
+
+/* ===== DAILY 01/02/03 FINAL ===== */
+
+.daily-section{
+  padding:64px 20px 72px;
+  background:linear-gradient(180deg,#fffdf8 0%,#faf5fb 100%);
+}
+
+.daily-section .section-heading{
+  max-width:1180px;
+  margin:0 auto 30px;
+  text-align:center;
+}
+
+.daily-section .section-heading small{
+  display:block;
+  color:#9b7a3d;
+  letter-spacing:.16em;
+  font-size:12px;
+  margin-bottom:8px;
+}
+
+.daily-section .section-heading h2{
+  margin:0;
+  color:#68215e;
+  font-size:clamp(26px,5vw,42px);
+  font-weight:600;
+  letter-spacing:.04em;
+}
+
+.daily-section .section-heading p{
+  margin:12px 0 0;
+  color:#786c73;
+  font-size:15px;
+}
+
+.daily-grid{
+  width:min(1180px,100%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.daily-item{
+  display:block;
+  overflow:hidden;
+  border-radius:26px;
+  background:rgba(255,255,255,.9);
+  border:1px solid rgba(153,119,57,.18);
+  box-shadow:0 14px 36px rgba(74,42,67,.10);
+  text-decoration:none;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+
+.daily-item:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px rgba(74,42,67,.16);
+}
+
+.daily-photo{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/10;
+  overflow:hidden;
+}
+
+.daily-photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+
+.daily-body{
+  position:relative;
+  padding:22px 22px 25px;
+  min-height:155px;
+}
+
+.daily-number{
+  position:absolute;
+  right:18px;
+  top:8px;
+  font-family:Georgia,serif;
+  font-size:58px;
+  line-height:1;
+  color:rgba(104,33,94,.08);
+}
+
+.daily-body small{
+  display:block;
+  color:#a27a35;
+  font-size:11px;
+  letter-spacing:.14em;
+  margin-bottom:5px;
+}
+
+.daily-body h3{
+  margin:0 0 8px;
+  color:#68215e;
+  font-size:24px;
+  font-weight:600;
+}
+
+.daily-body p{
+  margin:0 0 13px;
+  color:#746970;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.daily-body b{
+  color:#8b6729;
+  font-size:13px;
+  font-weight:500;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+  .daily-section{
+    padding:46px 16px 54px;
+  }
+
+  .daily-section .section-heading{
+    margin-bottom:23px;
+  }
+
+  .daily-section .section-heading h2{
+    font-size:28px;
+  }
+
+  .daily-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .daily-item{
+    border-radius:22px;
+  }
+
+  .daily-photo{
+    aspect-ratio:16/9;
+  }
+
+  .daily-body{
+    padding:18px 19px 21px;
+    min-height:0;
+  }
+
+  .daily-body h3{
+    font-size:22px;
+  }
+
+  .daily-number{
+    font-size:52px;
+  }
+}
+
+
+/* ===== ANNOUNCEMENT ===== */
+.announcement-section{
+  padding:14px 6vw;
+  background:#f4edf6;
+}
+.announcement-section[hidden]{
+  display:none !important;
+}
+.announcement-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:18px 20px;
+  border-left:3px solid #b18a42;
+  background:rgba(255,255,255,.78);
+}
+.announcement-inner small{
+  display:block;
+  margin-bottom:5px;
+  letter-spacing:.15em;
+  color:#a47c35;
+}
+.announcement-inner strong{
+  display:block;
+  font-size:1.15rem;
+  color:#6d285f;
+}
+
+/* ===== CHURCH LIFE ===== */
+.church-life-section{
+  padding:64px 6vw 80px;
+  background:#faf7f3;
+}
+.church-life-section .section-heading{
+  margin-bottom:30px;
+}
+.church-life-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+.church-life-card{
+  display:block;
+  padding:28px 24px;
+  border-radius:24px;
+  background:#fff;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(60,40,55,.07);
+}
+.church-life-card small{
+  display:block;
+  margin-bottom:8px;
+  font-size:.72rem;
+  letter-spacing:.15em;
+  color:#a47c35;
+}
+.church-life-card h3{
+  margin:0 0 10px;
+  font-size:1.55rem;
+  font-weight:500;
+  color:#762765;
+}
+.church-life-card p{
+  margin:0 0 18px;
+  line-height:1.8;
+  color:#6c6468;
+}
+.church-life-card span{
+  color:#a47c35;
+  font-size:.92rem;
+}
+@media (min-width:800px){
+  .church-life-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* ===== MOBILE MENU CLICK FIX 20260912 ===== */
+.hero header{
+  pointer-events:none !important;
+}
+
+.hero header .menu{
+  display:flex !important;
+  position:absolute !important;
+  top:24px !important;
+  right:6vw !important;
+  left:auto !important;
+  z-index:99999 !important;
+  pointer-events:auto !important;
+  cursor:pointer !important;
+  touch-action:manipulation !important;
+}
+
+
+/* ===== NATIVE MOBILE MENU ===== */
+
+.native-menu{
+  position:absolute !important;
+  top:24px !important;
+  right:6vw !important;
+  z-index:999999 !important;
+  pointer-events:auto !important;
+}
+
+.native-menu summary{
+  list-style:none !important;
+  width:76px;
+  height:58px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.native-menu summary::-webkit-details-marker{
+  display:none !important;
+}
+
+.native-menu summary::marker{
+  content:"" !important;
+}
+
+.native-menu summary span{
+  display:block;
+  width:58px;
+  height:5px;
+  border-radius:5px;
+  background:#fff;
+}
+
+.native-menu-panel{
+  position:fixed;
+  top:0;
+  right:0;
+  width:min(84vw,390px);
+  height:100dvh;
+  padding:105px 28px 40px;
+  box-sizing:border-box;
+  background:rgba(255,252,248,.98);
+  box-shadow:-12px 0 40px rgba(60,40,55,.16);
+  overflow-y:auto;
+}
+
+.native-menu-panel a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:62px;
+  border-bottom:1px solid rgba(118,39,101,.12);
+  color:#762765;
+  text-decoration:none;
+  font-size:1.18rem;
+}
+
+.native-menu-panel small{
+  color:#a47c35;
+  font-size:.62rem;
+  letter-spacing:.12em;
+}
+
+.native-menu[open] summary{
+  position:fixed !important;
+  top:24px !important;
+  right:6vw !important;
+  z-index:1000001 !important;
+}
+
+.native-menu[open] summary span{
+  background:#762765;
+}
+
+.native-menu[open] summary span:nth-child(1){
+  transform:translateY(13px) rotate(45deg);
+}
+
+.native-menu[open] summary span:nth-child(2){
+  opacity:0;
+}
+
+.native-menu[open] summary span:nth-child(3){
+  transform:translateY(-13px) rotate(-45deg);
+}
+
+/* ===== HERO BUTTONS：只改顏色，不碰尺寸與位置 ===== */
+
+.hero .buttons .primary,
+.hero .buttons .secondary,
+.hero .buttons .primary:link,
+.hero .buttons .secondary:link,
+.hero .buttons .primary:visited,
+.hero .buttons .secondary:visited{
+  background:#8b1f72 !important;
+  color:#fff !important;
+  outline:none !important;
+  box-shadow:none !important;
+  -webkit-tap-highlight-color:transparent !important;
+}
+
+/* 按下只變金色 */
+.hero .buttons .primary:active,
+.hero .buttons .secondary:active{
+  background:#c29a45 !important;
+  color:#fff !important;
+  outline:none !important;
+  box-shadow:none !important;
+  transform:none !important;
+}
+
+
+/* ===== HERO UI POSITION FINAL LOCK 20260912 ===== */
+
+/* 手機不論 390 / 412 / 430px，固定在 Hero 最下方 */
+@media (max-width:768px){
+
+  .hero .hero-content{
+    position:absolute !important;
+    left:5vw !important;
+    right:5vw !important;
+    width:auto !important;
+    top:auto !important;
+    bottom:3.5% !important;
+  }
+
+  .hero .hero-content .buttons{
+    margin:0 !important;
+  }
+
+  /* 兩顆正常狀態完全同色 */
+  .hero .buttons .primary,
+  .hero .buttons .secondary,
+  .hero .buttons .primary:link,
+  .hero .buttons .secondary:link,
+  .hero .buttons .primary:visited,
+  .hero .buttons .secondary:visited{
+    background:#8b1f72 !important;
+    color:#fff !important;
+    outline:none !important;
+    box-shadow:none !important;
+    transform:none !important;
+    -webkit-tap-highlight-color:transparent !important;
+  }
+
+  /* 按下只變金色 */
+  .hero .buttons .primary:active,
+  .hero .buttons .secondary:active{
+    background:#c29a45 !important;
+    color:#fff !important;
+    transform:none !important;
+  }
+}
+
+/* ===== MOBILE HERO BUTTON COLOR FINAL ===== */
+@media (max-width:768px){
+
+  .hero .buttons .primary,
+  .hero .buttons .secondary,
+  .hero .buttons .primary:link,
+  .hero .buttons .secondary:link,
+  .hero .buttons .primary:visited,
+  .hero .buttons .secondary:visited{
+    background:#8b1f72 !important;
+    color:#fff !important;
+    border-color:#8b1f72 !important;
+  }
+
+  /* 按下只變金色 */
+  .hero .buttons .primary:active,
+  .hero .buttons .secondary:active{
+    background:#c29a45 !important;
+    border-color:#c29a45 !important;
+    color:#fff !important;
+  }
+}
+
+/* ===== MOBILE HERO BUTTON COLOR MASTER ===== */
+@media (max-width:768px){
+
+  .hero-content .buttons > a.primary,
+  .hero-content .buttons > a.secondary,
+  .hero-content .buttons > a.primary:link,
+  .hero-content .buttons > a.secondary:link,
+  .hero-content .buttons > a.primary:visited,
+  .hero-content .buttons > a.secondary:visited{
+    background:#8b1f72 !important;
+    background-color:#8b1f72 !important;
+    color:#ffffff !important;
+    border-color:#8b1f72 !important;
+  }
+
+  .hero-content .buttons > a.primary:active,
+  .hero-content .buttons > a.secondary:active{
+    background:#c29a45 !important;
+    background-color:#c29a45 !important;
+    color:#ffffff !important;
+    border-color:#c29a45 !important;
+  }
+}
+
+/* ===== HERO CTA MOBILE FINAL ===== */
+@media (max-width:768px){
+
+  .hero-content .buttons > a.primary,
+  .hero-content .buttons > a.secondary,
+  .hero-content .buttons > a.primary:link,
+  .hero-content .buttons > a.secondary:link,
+  .hero-content .buttons > a.primary:visited,
+  .hero-content .buttons > a.secondary:visited{
+    height:64px !important;
+    min-height:64px !important;
+    max-height:64px !important;
+
+    padding:0 !important;
+    box-sizing:border-box !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    background:rgba(255,252,248,.92) !important;
+    color:#8b1f72 !important;
+
+    border:0 !important;
+    outline:0 !important;
+    box-shadow:none !important;
+
+    font-size:20px !important;
+    line-height:1 !important;
+    font-weight:500 !important;
+
+    transform:none !important;
+    -webkit-tap-highlight-color:transparent !important;
+  }
+
+  /* 按下只改成深紫色 */
+  .hero-content .buttons > a.primary:active,
+  .hero-content .buttons > a.secondary:active{
+    background:#8b1f72 !important;
+    color:#fff !important;
+    border:0 !important;
+    transform:none !important;
+  }
+}
+
+/* ===== CHURCH LIFE MOBILE FINAL 20260912 ===== */
+@media (max-width:768px){
+
+  .church-life-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+    width:100% !important;
+  }
+
+  .church-life-card{
+    width:100% !important;
+    min-height:126px !important;
+    padding:22px 20px !important;
+    border-radius:20px !important;
+    box-sizing:border-box !important;
+  }
+
+  .church-life-card small{
+    font-size:11px !important;
+    letter-spacing:1.6px !important;
+  }
+
+  .church-life-card h3{
+    margin:8px 0 !important;
+    font-size:22px !important;
+    line-height:1.25 !important;
+  }
+
+  .church-life-card p{
+    font-size:14px !important;
+    line-height:1.7 !important;
+  }
+
+  .church-life-card span{
+    display:block !important;
+    margin-top:10px !important;
+    font-size:13px !important;
+  }
+}
+
+/* ==================================================
+   20260912 MOBILE WIDTH ROOT FIX
+   修正手機頁面被子元素撐到 2000px+
+   不修改 Hero / CTA / 漢堡位置
+   ================================================== */
+
+html,
+body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  position: relative !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+}
+
+/* 所有首頁主要區塊不得超過 viewport */
+main,
+section,
+.daily-grid,
+.church-life-grid,
+.church-life-card,
+.church-life-image-card,
+.church-life-card-image,
+.church-life-card-body {
+  max-width: 100% !important;
+}
+
+/* 手機版生活／教會功能卡固定為單欄 */
+@media (max-width: 768px) {
+
+  .church-life-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .church-life-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .church-life-card-image,
+  .church-life-card-body {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .church-life-card-image img,
+  .church-life-card img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+
+/* ==================================================
+   20260912 MOBILE FINAL LAYOUT + NAV FIX
+   ================================================== */
+
+@media (max-width:768px){
+
+  html,
+  body{
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:hidden !important;
+  }
+
+  .main,
+  main,
+  section,
+  .daily-grid,
+  .church-life-grid{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+  }
+
+  .church-life-grid{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+  }
+
+  .church-life-card,
+  .church-life-image-card,
+  .church-life-card-image,
+  .church-life-card-body{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+  }
+
+  .church-life-card-image img,
+  .church-life-card img{
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+  }
+}
+

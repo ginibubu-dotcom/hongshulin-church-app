@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>紅樹林靈糧堂 Prototype</title>
+  <link rel="stylesheet" href="/prototype/prototype.css?v=3">
+</head>
+
+<body>
+
+<section class="hero">
+
+  <img class="hero-bg" src="/prototype/hero-mobile.png" alt="">
+
+  <div class="soft-light"></div>
+
+  <header>
+    <img class="logo" src="./hslllc-logo-v2.png" alt="紅樹林靈糧堂">
+
+    <button class="menu" aria-label="選單">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <div class="hero-content">
+
+    <h1>
+      <span>在神裡面</span>
+      <span>我們得生命</span>
+      <span>並且得的更豐盛</span>
+    </h1>
+
+    <div class="line"></div>
+
+    <div class="verse">約翰福音 10:10</div>
+
+    <div class="buttons">
+      <a class="primary" href="#today">今日內容 ›</a>
+      <a class="secondary" href="#gathering">聚會資訊 ›</a>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="daily-section" id="today">
+
+  <div class="section-heading">
+    <small>TODAY AT HSLLLC</small>
+    <h2>今天，讓神的話進入生活</h2>
+    <i></i>
+    <p>每天一點時間，安靜、領受、重新得力。</p>
+  </div>
+
+  <div class="daily-grid">
+
+    <a class="daily-item" href="#">
+      <span class="daily-number">01</span>
+      <small>DAILY WORD</small>
+      <h3>每日神話</h3>
+      <p>每天，一句從神而來的話</p>
+      <b>閱讀今日祝福 ›</b>
+    </a>
+
+    <a class="daily-item" href="#">
+      <span class="daily-number">02</span>
+      <small>DAILY DEVOTION</small>
+      <h3>每日靈泉</h3>
+      <p>讀懂神的話，活進今天</p>
+      <b>進入今日靈修 ›</b>
+    </a>
+
+    <a class="daily-item" href="#">
+      <span class="daily-number">03</span>
+      <small>SERMON & MEDIA</small>
+      <h3>講道影音</h3>
+      <p>讓主日的信息，陪你走進每一天</p>
+      <b>觀看最新講道 ›</b>
+    </a>
+
+  </div>
+
+</section>
+
+
+</body>
+</html>

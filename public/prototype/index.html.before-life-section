@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>紅樹林靈糧堂 Prototype</title>
+  <link rel="stylesheet" href="/prototype/prototype.css?v=3">
+</head>
+
+<body>
+
+<section class="hero">
+
+  <img class="hero-bg" src="/prototype/hero-mobile.png" alt="">
+
+  <div class="soft-light"></div>
+
+  <header>
+    <img class="logo" src="./hslllc-logo-v2.png" alt="紅樹林靈糧堂">
+
+    <button class="menu" aria-label="選單">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <div class="hero-content">
+
+    <h1>
+      <span>在神裡面</span>
+      <span>我們得生命</span>
+      <span>並且得的更豐盛</span>
+    </h1>
+
+    <div class="line"></div>
+
+    <div class="verse">約翰福音 10:10</div>
+
+    <div class="buttons">
+      <a class="primary" href="#today">今日內容 ›</a>
+      <a class="secondary" href="#gathering">聚會資訊 ›</a>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<!-- HSLLLC QUICK ACCESS v2 -->
+<section class="home-quick">
+
+  <a href="#today" class="quick-item">
+    <span class="quick-icon"><svg viewBox="0 0 48 48" aria-hidden="true">
+<path d="M8 9h13c3 0 5 2 5 5v25c0-3-2-5-5-5H8z"/>
+<path d="M40 9H27c-1 0-1 0-1 0v30c0-3 2-5 5-5h9z"/>
+<path d="M14 17h7M14 22h7"/>
+</svg></span>
+    <strong>今日神話</strong>
+    <small>每日經文與亮光</small>
+  </a>
+
+  <a href="#devotion" class="quick-item">
+    <span class="quick-icon"><svg viewBox="0 0 48 48" aria-hidden="true">
+<path d="M24 40V23"/>
+<path d="M24 28c-7 0-12-5-12-13 8 0 12 4 12 10"/>
+<path d="M24 23c1-8 6-12 14-12 0 9-5 15-14 15"/>
+</svg></span>
+    <strong>每日靈泉</strong>
+    <small>靈命更新</small>
+  </a>
+
+  <a href="#health" class="quick-item">
+    <span class="quick-icon"><svg viewBox="0 0 48 48" aria-hidden="true">
+<path d="M24 39S8 30 8 18c0-6 4-10 10-10 4 0 6 2 8 5 2-3 4-5 8-5 6 0 10 4 10 10 0 12-20 21-20 21z"/>
+<path d="M14 24h7l3-6 4 12 3-6h7"/>
+</svg></span>
+    <strong>健康小撇步</strong>
+    <small>照顧身心靈</small>
+  </a>
+
+  <a href="#gathering" class="quick-item">
+    <span class="quick-icon"><svg viewBox="0 0 48 48" aria-hidden="true">
+<circle cx="24" cy="15" r="7"/>
+<circle cx="10" cy="20" r="5"/>
+<circle cx="38" cy="20" r="5"/>
+<path d="M12 39c0-8 5-13 12-13s12 5 12 13"/>
+<path d="M2 39c0-7 3-11 9-11M46 39c0-7-3-11-9-11"/>
+</svg></span>
+    <strong>聚會資訊</strong>
+    <small>一起敬拜成長</small>
+  </a>
+
+  <a href="#family" class="quick-item">
+    <span class="quick-icon"><svg viewBox="0 0 48 48" aria-hidden="true">
+<rect x="5" y="13" width="38" height="27" rx="5"/>
+<path d="M15 13l3-5h12l3 5"/>
+<circle cx="24" cy="26" r="8"/>
+</svg></span>
+    <strong>家遊趣</strong>
+    <small>旅程見證分享</small>
+  </a>
+
+  <a href="#events" class="quick-item">
+    <span class="quick-icon"><svg viewBox="0 0 48 48" aria-hidden="true">
+<rect x="6" y="9" width="36" height="33" rx="4"/>
+<path d="M6 18h36M15 5v9M33 5v9"/>
+<path d="M14 25h4M23 25h4M32 25h4M14 33h4M23 33h4"/>
+</svg></span>
+    <strong>加油去</strong>
+    <small>活動報名</small>
+  </a>
+
+</section>
+
+<section class="daily-section" id="today">
+
+  <div class="section-heading">
+    <small>TODAY AT HSLLLC</small>
+    <h2>今天，讓神的話進入生活</h2>
+    <i></i>
+    <p>每天一點時間，安靜、領受、重新得力。</p>
+  </div>
+
+  <div class="daily-grid">
+
+    <a class="daily-item" href="#">
+      <div class="daily-photo">
+        <img src="/prototype/daily-word.png?v=1" alt="今日神話">
+      </div>
+
+      <div class="daily-body">
+        <span class="daily-number">01</span>
+        <small>DAILY WORD</small>
+        <h3>每日神話</h3>
+        <p>每天，一句從神而來的話</p>
+      <b>閱讀今日祝福 ›</b>
+      </div>
+    </a>
+
+    <a class="daily-item" href="#">
+      <div class="daily-photo">
+        <img src="/prototype/daily-devotion.png?v=1" alt="每日靈泉">
+      </div>
+
+      <div class="daily-body">
+        <span class="daily-number">02</span>
+        <small>DAILY DEVOTION</small>
+        <h3>每日靈泉</h3>
+        <p>讀懂神的話，活進今天</p>
+      <b>進入今日靈修 ›</b>
+      </div>
+    </a>
+
+    <a class="daily-item" href="#">
+      <div class="daily-photo">
+        <img src="/prototype/sermon-media.png?v=1" alt="講道影音">
+      </div>
+
+      <div class="daily-body">
+        <span class="daily-number">03</span>
+        <small>SERMON & MEDIA</small>
+        <h3>講道影音</h3>
+        <p>讓主日的信息，陪你走進每一天</p>
+      <b>觀看最新講道 ›</b>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+
+
+</body>
+</html>

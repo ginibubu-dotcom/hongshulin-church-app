@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>紅樹林靈糧堂 Prototype</title>
+  <link rel="stylesheet" href="/prototype/prototype.css?v=21">
+</head>
+
+<body>
+
+<section class="hero">
+
+  <img class="hero-bg" src="/prototype/hero-final-20260912.png" alt="">
+
+  <div class="soft-light"></div>
+
+  <header>
+    <img class="logo" src="/prototype/hslllc-logo-horizontal.png?v=12" alt="紅樹林靈糧堂">
+
+    <button class="menu" aria-label="選單" style="position:absolute!important;top:24px!important;right:6vw!important;left:auto!important;z-index:9999!important;">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <div class="hero-content">
+    <div class="buttons">
+      <a class="primary" href="/prototype/about/">認識我們</a>
+      <a class="secondary" href="/prototype/daily-word/">今日神話</a>
+    </div>
+  </div>
+
+  </div>
+
+</section>
+
+<!-- ANNOUNCEMENT｜有公告時移除 hidden -->
+<section class="announcement-section" id="announcement" hidden>
+  <div class="announcement-inner">
+    <small>CHURCH NOTICE</small>
+    <strong>教會公告</strong>
+    <p id="announcement-text"></p>
+    <a id="announcement-link" href="#" hidden>查看詳情 →</a>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="daily-section" id="today">
+
+  <div class="section-heading">
+    <small>TODAY AT HSLLLC</small>
+    <h2>每天，與神同行</h2>
+    <i></i>
+    <p>讓神的話與信息，陪你走進每一天。</p>
+  </div>
+
+  <div class="daily-grid">
+
+    
+
+    <a class="daily-item" href="#">
+      <div class="daily-photo">
+        <img src="/prototype/daily-devotion.png?v=20260912-1" alt="活水靈泉">
+      </div>
+
+      <div class="daily-body">
+        <small>DAILY DEVOTION</small>
+        <h3>活水靈泉</h3>
+        <p>讀懂神的話，活進今天</p>
+      <b>進入今日靈修 ›</b>
+      </div>
+    </a>
+
+    <a class="daily-item" href="#">
+      <div class="daily-photo">
+        <img src="/prototype/sermon-moses-final.png?v=1" alt="講道影音">
+      </div>
+
+      <div class="daily-body">
+        <small>SERMON & MEDIA</small>
+        <h3>講道影音</h3>
+        <p>讓主日的信息，陪你走進每一天</p>
+      <b>觀看最新講道 ›</b>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+
+<!-- ==================================================
+     CHURCH LIFE｜教會生活與服務
+================================================== -->
+<section class="church-life-section" id="church-life">
+
+  <div class="section-heading">
+    <small>LIFE AT HSLLLC</small>
+    <h2>一起生活，一起成長</h2>
+    <i></i>
+    <p>信仰不只在主日，也在每天的生活裡。</p>
+  </div>
+
+  <div class="church-life-grid">
+
+    <a class="church-life-card" id="health" href="#">
+      <small>HEALTH & CARE</small>
+      <h3>健康小撇步</h3>
+      <p>每天照顧身心，也是一種愛。</p>
+      <span>看看今日健康資訊 →</span>
+    </a>
+
+    <a class="church-life-card" id="gathering" href="#">
+      <small>GATHERING</small>
+      <h3>聚會資訊</h3>
+      <p>主日｜小組｜課輔班｜研經班</p>
+      <span>查看聚會時間 →</span>
+    </a>
+
+    <a class="church-life-card" id="family" href="#">
+      <small>FAMILY LIFE</small>
+      <h3>家遊趣</h3>
+      <p>一起走出去，也一起留下家的記憶。</p>
+      <span>看看我們的生活 →</span>
+    </a>
+
+    <a class="church-life-card" id="events" href="#">
+      <small>EVENTS & COURSES</small>
+      <h3>加油去</h3>
+      <p>活動｜課程｜講座｜報名</p>
+      <span>看看最近活動 →</span>
+    </a>
+
+    <a class="church-life-card" id="testimony" href="#">
+      <small>TESTIMONY</small>
+      <h3>雲彩見證</h3>
+      <p>每一個生命，都有一段神正在寫的故事。</p>
+      <span>分享我的見證 →</span>
+    </a>
+
+    <a class="church-life-card" id="prayer" href="#">
+      <small>PRAYER</small>
+      <h3>代禱協助</h3>
+      <p>有人願意與你一起禱告。</p>
+      <span>提出代禱 →</span>
+    </a>
+
+    <a class="church-life-card" id="church-info" href="#">
+      <small>VISIT US</small>
+      <h3>教會資訊</h3>
+      <p>開放時間｜地址｜電話｜Email｜交通導航</p>
+      <span>認識我們的位置 →</span>
+    </a>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+<!-- /CARE SECTION -->
+
+</body>
+</html>

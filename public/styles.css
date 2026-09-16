@@ -1,0 +1,445 @@
+:root{
+  --paper:#f7f1e5;
+  --ink:#3d342d;
+  --purple:#744079;
+  --gold:#ad8441;
+  --line:#d9c8a8;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  color:var(--ink);
+  background:#f7f1e5;
+  background-image:
+    radial-gradient(rgba(103,76,45,.045) .6px,transparent .7px),
+    radial-gradient(rgba(255,255,255,.7) .7px,transparent .8px);
+  background-size:7px 7px,11px 11px;
+  font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+}
+
+/* ===== HEADER ===== */
+
+.site-header{
+  height:78px;
+  padding:6px 17px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(250,247,239,.98);
+  border-bottom:1px solid rgba(173,132,65,.16);
+}
+
+.brand{
+  width:170px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+
+.brand img{
+  width:170px;
+  height:64px;
+  object-fit:contain;
+  object-position:left center;
+}
+
+.menu{
+  width:45px;
+  height:43px;
+  padding:6px 2px;
+  border:0;
+  background:transparent;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.menu span{
+  display:block;
+  width:36px;
+  height:3px;
+  margin-left:auto;
+  border-radius:5px;
+  background:#4a3c32;
+}
+
+
+/* ===== HERO ===== */
+
+.hero{
+  position:relative;
+  width:100%;
+  height:535px;
+  overflow:hidden;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 52%;
+}
+
+.hero-shade{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,249,237,.70) 0%,
+      rgba(255,249,237,.42) 35%,
+      rgba(255,249,237,.10) 58%,
+      rgba(255,249,237,0) 76%
+    );
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:100%;
+  padding:0 22px 25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:flex-start;
+}
+
+.hero-kicker{
+  margin:0 0 8px;
+  color:#9d742f;
+  font-family:Georgia,serif;
+  font-size:8px;
+  font-weight:600;
+  letter-spacing:.17em;
+}
+
+.hero h1{
+  margin:0;
+  max-width:285px;
+  color:#382f29;
+  font-family:"Noto Serif TC","PMingLiU",serif;
+  font-size:27px;
+  font-weight:500;
+  line-height:1.43;
+  letter-spacing:.025em;
+}
+
+.verse-line{
+  width:62px;
+  height:1px;
+  margin:11px 0 8px;
+  background:var(--gold);
+}
+
+.verse{
+  margin:0;
+  font-family:"Noto Serif TC","PMingLiU",serif;
+  font-size:13px;
+  letter-spacing:.10em;
+}
+
+.hero-actions{
+  width:100%;
+  max-width:340px;
+  display:flex;
+  gap:9px;
+  margin-top:18px;
+}
+
+.btn{
+  flex:1;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  font-size:14px;
+  letter-spacing:.03em;
+}
+
+.btn-primary{
+  color:#fff;
+  background:var(--purple);
+  border:1px solid var(--purple);
+}
+
+.btn-outline{
+  color:#44382f;
+  background:rgba(255,252,245,.86);
+  border:1px solid var(--gold);
+}
+
+
+/* ===== FIVE QUICK LINKS ===== */
+
+.quick-nav{
+  min-height:92px;
+  padding:17px 6px 13px;
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  background:rgba(250,247,239,.98);
+  border-bottom:1px solid rgba(173,132,65,.12);
+}
+
+.quick-nav a{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  gap:5px;
+  text-align:center;
+}
+
+.quick-nav .icon{
+  height:27px;
+  color:var(--gold);
+  font-family:Georgia,serif;
+  font-size:24px;
+  line-height:1;
+}
+
+.quick-nav b{
+  font-family:"Noto Serif TC","PMingLiU",serif;
+  font-size:10px;
+  font-weight:500;
+  white-space:nowrap;
+}
+
+
+/* ===== CHURCH DIVIDER ===== */
+
+.church-divider{
+  padding:12px 17px 20px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(250,247,239,.98);
+}
+
+.church-divider span{
+  flex:1;
+  height:1px;
+  background:var(--line);
+}
+
+.church-divider p{
+  margin:0;
+  color:#9b7a49;
+  font-family:Georgia,serif;
+  font-size:6px;
+  letter-spacing:.12em;
+  white-space:nowrap;
+}
+
+
+/* ===== TODAY ===== */
+
+.today{
+  padding:46px 18px 48px;
+  text-align:center;
+  background:rgba(255,253,248,.48);
+}
+
+.eyebrow{
+  margin:0 0 5px;
+  color:var(--gold);
+  font-family:Georgia,serif;
+  font-size:8px;
+  letter-spacing:.22em;
+}
+
+.today h2,
+.gathering h2{
+  margin:0;
+  color:var(--purple);
+  font-family:"Noto Serif TC","PMingLiU",serif;
+  font-size:29px;
+  font-weight:500;
+  letter-spacing:.10em;
+}
+
+.gold-rule{
+  width:44px;
+  height:1px;
+  margin:14px auto 17px;
+  background:var(--gold);
+}
+
+.lead{
+  margin:0 0 25px;
+  color:#70665d;
+  font-family:"Noto Serif TC","PMingLiU",serif;
+  font-size:14px;
+}
+
+.cards{
+  display:grid;
+  gap:12px;
+  text-align:left;
+}
+
+.cards article{
+  padding:20px;
+  border:1px solid rgba(173,132,65,.20);
+  border-radius:14px;
+  background:rgba(255,255,255,.60);
+}
+
+.cards small{
+  color:var(--gold);
+  font-family:Georgia,serif;
+  font-size:8px;
+  letter-spacing:.18em;
+}
+
+.cards h3{
+  margin:4px 0 5px;
+  color:var(--purple);
+  font-family:"Noto Serif TC","PMingLiU",serif;
+  font-size:19px;
+  font-weight:500;
+}
+
+.cards p{
+  margin:0 0 9px;
+  color:#71675f;
+  font-size:12px;
+}
+
+.cards a{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:600;
+}
+
+
+/* ===== LOWER CONTENT ===== */
+
+.gathering{
+  padding:46px 20px;
+  text-align:center;
+  border-top:1px solid rgba(173,132,65,.13);
+}
+
+.gathering p:last-child{
+  margin:0;
+  color:#71675e;
+  font-size:13px;
+}
+
+.feature-grid{
+  padding:0 17px 42px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.feature-grid a{
+  min-height:90px;
+  padding:15px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border:1px solid rgba(173,132,65,.20);
+  border-radius:13px;
+  background:rgba(255,255,255,.52);
+}
+
+.feature-grid b{
+  color:var(--purple);
+  font-family:"Noto Serif TC","PMingLiU",serif;
+  font-size:17px;
+  font-weight:500;
+}
+
+.feature-grid span{
+  margin-top:3px;
+  color:#7c7168;
+  font-size:10px;
+}
+
+footer{
+  padding:30px 18px 35px;
+  text-align:center;
+  border-top:1px solid rgba(173,132,65,.17);
+}
+
+footer p{
+  margin:0;
+  font-family:"Noto Serif TC","PMingLiU",serif;
+  font-size:16px;
+  letter-spacing:.08em;
+}
+
+footer small{
+  display:block;
+  margin-top:6px;
+  color:var(--gold);
+  font-family:Georgia,serif;
+  font-size:7px;
+  letter-spacing:.18em;
+}
+
+
+/* ===== NARROW PHONES ===== */
+
+@media(max-width:390px){
+
+  .site-header{
+    height:74px;
+  }
+
+  .brand,
+  .brand img{
+    width:158px;
+    height:60px;
+  }
+
+  .hero{
+    height:510px;
+  }
+
+  .hero-content{
+    padding:0 19px 22px;
+  }
+
+  .hero h1{
+    max-width:260px;
+    font-size:25px;
+  }
+
+  .hero-actions{
+    max-width:325px;
+  }
+
+  .btn{
+    height:42px;
+    font-size:13px;
+  }
+
+  .quick-nav b{
+    font-size:9px;
+  }
+}

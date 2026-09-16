@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>紅樹林靈糧堂 Prototype</title>
+  <link rel="stylesheet" href="/prototype/prototype.css?v=20260913-8">
+
+<!-- SIX-CARDS-MOBILE-FINAL-20260914 -->
+<style>
+/* 六張圖卡唯一手機顯示尺寸 */
+.new-six-cards{
+    width:100%;
+    max-width:100%;
+    margin:0;
+    padding:16px 10px 36px;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+
+.new-card{
+    position:relative;
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+    margin:0 0 22px;
+    padding:0;
+    box-sizing:border-box;
+    overflow:hidden;
+    border:0;
+    border-radius:20px;
+    background:transparent;
+}
+
+.new-card img{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+    margin:0;
+    padding:0;
+    border:0;
+    object-fit:contain;
+}
+
+/* 金色按鈕下一步再放 */
+.new-card-arrow{
+    display:none !important;
+}
+
+@media (max-width:768px){
+    .new-six-cards{
+        width:100vw;
+        max-width:100vw;
+        margin-left:calc(50% - 50vw);
+        margin-right:calc(50% - 50vw);
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    .new-card,
+    .new-card img{
+        width:100%;
+        max-width:100%;
+    }
+}
+</style>
+<!-- /SIX-CARDS-MOBILE-FINAL-20260914 -->
+
+</head>
+
+<body>
+
+<section class="hero">
+
+  <img class="hero-bg" src="/prototype/hero-final-20260912.png?v=20260913-B2" alt="">
+
+
+  <header>
+    <img class="logo" src="/prototype/hslllc-logo-horizontal.png?v=12" alt="紅樹林靈糧堂">
+
+    
+<details class="native-menu">
+  <summary aria-label="開啟選單">
+    <span></span>
+    <span></span>
+    <span></span>
+  </summary>
+
+  <div class="native-menu-panel">
+    <a href="/prototype/about/">認識我們 <small>ABOUT</small></a>
+    <a href="/prototype/daily-word/">今日神話 <small>DAILY WORD</small></a>
+    <a href="#today">活水靈泉 <small>DAILY DEVOTION</small></a>
+    <a href="#today">講道影音 <small>SERMON & MEDIA</small></a>
+    <a href="#gathering">最新聚會 <small>GATHERING</small></a>
+    <a href="#church-life">一起生活 <small>LIFE TOGETHER</small></a>
+    <a href="#health">健康小撇步 <small>HEALTH</small></a>
+    <a href="#prayer">禱告空間 <small>PRAYER</small></a>
+  </div>
+</details>
+
+  
+</header>
+
+
+
+
+  <div class="hero-content">
+    <div class="buttons">
+      <a class="primary" href="/prototype/about/">認識我們</a>
+      <a class="secondary" href="/prototype/daily-word/">今日神話</a>
+    </div>
+  </div>
+
+  </div>
+
+</section>
+
+<!-- ANNOUNCEMENT｜有公告時移除 hidden -->
+<section class="announcement-section" id="announcement" hidden>
+  <div class="announcement-inner">
+    <small>CHURCH NOTICE</small>
+    <strong>教會公告</strong>
+    <p id="announcement-text"></p>
+    <a id="announcement-link" href="#" hidden>查看詳情 →</a>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="daily-section" id="today">
+
+  
+<div class="section-heading">
+  <small>TODAY AT HSLLLC</small>
+  <h2>每天，與神同行</h2>
+  <i></i>
+  <p>讓神的話與信息，陪你走進每一天。</p>
+</div>
+
+<div class="new-six-cards">
+
+  <a class="new-card" href="#">
+    <img src="/prototype/card-living-spring-final.png?v=20260915" alt="活水靈泉">
+    <span class="hslllc-purple-play" aria-label="進入今日靈修"
+      style="
+        position:absolute;
+        right:9%;
+        bottom:3.5%;
+        width:62px;
+        height:62px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        box-sizing:border-box;
+        border-radius:50%;
+        background:
+          radial-gradient(circle at 31% 24%,
+            #f6c8ff 0%,
+            #c84cff 18%,
+            #9221cf 43%,
+            #681099 68%,
+            #430765 100%);
+        border:0;
+        box-shadow:
+          inset 0 3px 4px rgba(255,255,255,.82),
+          inset 0 -6px 8px rgba(43,0,67,.55),
+          0 3px 0 #8d6824,
+          0 8px 14px rgba(67,34,79,.30);
+        z-index:50;
+      ">
+      <span aria-hidden="true"
+        style="
+          display:block;
+          width:0;
+          height:0;
+          margin-left:5px;
+          border-top:11px solid transparent;
+          border-bottom:11px solid transparent;
+          border-left:18px solid #fff;
+          filter:drop-shadow(0 1px 1px rgba(0,0,0,.16));
+        "></span>
+    </span>
+</a>
+
+  <a class="new-card" href="#">
+    <img src="/prototype/card-sermon-final.png?v=20260915" alt="講道影音">
+<span class="hslllc-purple-play" aria-label="播放講道影音"
+      style="
+        position:absolute;
+        right:9%;
+        bottom:3.5%;
+        width:62px;
+        height:62px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        box-sizing:border-box;
+        border-radius:50%;
+        background:
+          radial-gradient(circle at 31% 24%,
+            #f6c8ff 0%,
+            #c84cff 18%,
+            #9221cf 43%,
+            #681099 68%,
+            #430765 100%);
+        border:0;
+        box-shadow:
+          inset 0 3px 4px rgba(255,255,255,.82),
+          inset 0 -6px 8px rgba(43,0,67,.55),
+          0 3px 0 #8d6824,
+          0 8px 14px rgba(67,34,79,.30);
+        z-index:50;
+      ">
+      <span aria-hidden="true"
+        style="
+          display:block;
+          width:0;
+          height:0;
+          margin-left:5px;
+          border-top:11px solid transparent;
+          border-bottom:11px solid transparent;
+          border-left:18px solid #fff;
+          filter:drop-shadow(0 1px 1px rgba(0,0,0,.16));
+        "></span>
+    </span>
+
+
+  </a>
+
+  <a class="new-card" href="#">
+    <img src="/prototype/card-gathering-final.png?v=20260915" alt="最新聚會">
+  </a>
+
+  <a class="new-card" href="#">
+    <img src="/prototype/card-life-together-final.png?v=20260915" alt="一起生活">
+  </a>
+
+  <a class="new-card" href="#">
+    <img src="/prototype/card-testimonies-final.png?v=20260915" alt="雲彩見證">
+  </a>
+
+  <a class="new-card" href="#">
+    <img src="/prototype/card-health-final.png?v=20260915" alt="健康小站">
+  </a>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- /CARE SECTION -->
+
+
+
+
+
+<script>
+document.querySelectorAll('.hero .buttons a').forEach(btn => {
+  const release = () => {
+    btn.blur();
+    btn.style.transform = 'scale(1)';
+  };
+
+  btn.addEventListener('touchend', release, {passive:true});
+  btn.addEventListener('touchcancel', release, {passive:true});
+  btn.addEventListener('mouseup', release);
+});
+</script>
+\n</body>
+</html>

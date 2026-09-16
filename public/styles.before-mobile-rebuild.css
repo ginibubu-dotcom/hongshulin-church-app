@@ -1,0 +1,273 @@
+:root{
+  --ivory:#f7f2e6;
+  --paper:#fffdf8;
+  --ink:#302b27;
+  --muted:#81786d;
+  --gold:#b9934d;
+  --purple:#65406c;
+  --line:rgba(185,147,77,.28);
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;
+  line-height:1.7;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* 頂部導覽 */
+.topbar{
+  height:96px;
+  padding:10px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(247,242,230,.96);
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  width:185px;
+  height:76px;
+  overflow:hidden;
+}
+
+.brand img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:left center;
+  display:block;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:28px;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:var(--purple);
+}
+
+.menu{
+  display:none;
+  border:0;
+  background:none;
+  font-size:30px;
+  color:var(--ink);
+}
+
+/* 主視覺 */
+.hero{
+  max-width:1440px;
+  min-height:680px;
+  margin:auto;
+  padding:70px 6%;
+  display:grid;
+  grid-template-columns:40% 60%;
+  align-items:center;
+  gap:45px;
+}
+
+.hero-text{
+  position:relative;
+  z-index:2;
+}
+
+.eyebrow,
+.section-en{
+  color:var(--gold);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.22em;
+}
+
+.hero h1{
+  margin:22px 0;
+  font-family:"Noto Serif TC","PMingLiU",serif;
+  font-size:clamp(52px,6vw,88px);
+  font-weight:500;
+  line-height:1.16;
+  letter-spacing:.
+
+
+
+/* MOBILE PORTRAIT */
+@media (max-width:600px){
+  body{overflow-x:hidden;}
+
+  .topbar{
+    height:92px;
+    padding:10px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .brand{
+    width:auto;
+    height:72px;
+    display:flex;
+    align-items:center;
+  }
+
+  .brand img,
+  .brand .official-logo{
+    width:auto!important;
+    height:70px!important;
+    max-width:250px!important;
+    object-fit:contain!important;
+  }
+
+  .nav{display:none!important;}
+
+  .menu{
+    display:flex!important;
+    width:48px;
+    height:48px;
+    align-items:center;
+    justify-content:center;
+    font-size:0;
+    background:transparent;
+    border:0;
+  }
+
+  .menu::after{
+    content:"☰";
+    font-size:38px;
+    color:#493b2c;
+    line-height:1;
+  }
+}
+
+@media (max-width:600px){
+  .hero{
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+    padding:0;
+    margin:0;
+  }
+
+  .hero-visual{
+    order:1;
+    width:100%;
+    height:auto;
+    overflow:hidden;
+  }
+
+  .hero-visual img{
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    object-position:center top;
+  }
+
+  .hero-text{
+    order:2;
+    width:100%;
+    padding:32px 24px;
+  }
+
+  .hero h1{
+    margin:14px 0 18px;
+    font-size:42px;
+    line-height:1.28;
+    white-space:normal;
+  }
+}
+
+@media (max-width:600px){
+  .hero-actions{
+    display:flex;
+    gap:12px;
+    margin-top:22px;
+    flex-wrap:nowrap;
+  }
+
+  .hero-actions a,
+  .btn{
+    min-height:52px;
+    padding:13px 20px;
+    border-radius:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+  }
+
+  .feature-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr)!important;
+    gap:3px;
+    padding:22px 8px;
+  }
+
+  .feature-grid a{
+    min-width:0;
+    padding:10px 2px;
+    text-align:center;
+  }
+
+  .feature-grid b{
+    display:block;
+    font-size:13px;
+    font-weight:500;
+    white-space:nowrap;
+  }
+
+  .feature-grid span{
+    display:none;
+  }
+}
+
+@media (max-width:600px){
+  .daily-grid,
+  .cards{
+    grid-template-columns:1fr!important;
+    gap:14px;
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .section-head{
+    padding-left:22px;
+    padding-right:22px;
+  }
+
+  .section-head h2{
+    font-size:34px;
+  }
+
+  footer{
+    padding:38px 20px;
+    text-align:center;
+  }
+
+  footer img{
+    width:auto;
+    max-width:200px;
+    max-height:90px;
+    object-fit:contain;
+  }
+}

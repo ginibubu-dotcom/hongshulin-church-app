@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>紅樹林靈糧堂 Prototype</title>
+  <link rel="stylesheet" href="/prototype/prototype.css?v=21">
+</head>
+
+<body>
+
+<section class="hero">
+
+  <img class="hero-bg" src="/prototype/hero-final-20260912.png" alt="">
+
+  <div class="soft-light"></div>
+
+  <header>
+    <img class="logo" src="/prototype/hslllc-logo-horizontal.png?v=12" alt="紅樹林靈糧堂">
+
+    <button class="menu" aria-label="選單" style="position:absolute!important;top:24px!important;right:6vw!important;left:auto!important;z-index:9999!important;">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <div class="hero-content">
+    <div class="buttons">
+      <a class="primary" href="#about">認識我們</a>
+      <a class="secondary" href="#today">今日神話</a>
+    </div>
+  </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+<section class="daily-section" id="today">
+
+  <div class="section-heading">
+    <small>TODAY AT HSLLLC</small>
+    <h2>每天，與神同行</h2>
+    <i></i>
+    <p>讓神的話與信息，陪你走進每一天。</p>
+  </div>
+
+  <div class="daily-grid">
+
+    
+
+    <a class="daily-item" href="#">
+      <div class="daily-photo">
+        <img src="/prototype/daily-devotion.png?v=1" alt="活水靈泉">
+      </div>
+
+      <div class="daily-body">
+        <small>DAILY DEVOTION</small>
+        <h3>活水靈泉</h3>
+        <p>讀懂神的話，活進今天</p>
+      <b>進入今日靈修 ›</b>
+      </div>
+    </a>
+
+    <a class="daily-item" href="#">
+      <div class="daily-photo">
+        <img src="/prototype/sermon-media.png?v=1" alt="講道影音">
+      </div>
+
+      <div class="daily-body">
+        <small>SERMON & MEDIA</small>
+        <h3>講道影音</h3>
+        <p>讓主日的信息，陪你走進每一天</p>
+      <b>觀看最新講道 ›</b>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     TOGETHER / 一起生活
+     ======================================== -->
+
+<section class="life-section" id="gathering">
+
+  <div class="life-heading">
+    <small>TOGETHER AT HSLLLC</small>
+    <h2>一起生活，一起成長</h2>
+    <i></i>
+    <p>在教會裡相遇，也在生活裡彼此陪伴。</p>
+  </div>
+
+  <div class="life-grid">
+
+    <a class="life-card life-gathering" href="#">
+      <div class="life-card-text">
+        <small>GATHERING</small>
+        <h3>聚會資訊</h3>
+        <p>主日、小組與週間聚會</p>
+        <span>查看聚會時間 ›</span>
+      </div>
+      <div class="life-number">01</div>
+    </a>
+
+    <a class="life-card life-family" href="#family">
+      <div class="life-card-text">
+        <small>FAMILY LIFE</small>
+        <h3>家遊趣</h3>
+        <p>記錄小組生活與旅程見證</p>
+        <span>看看我們的生活 ›</span>
+      </div>
+      <div class="life-number">02</div>
+    </a>
+
+    <a class="life-card life-events" href="#events">
+      <div class="life-card-text">
+        <small>EVENTS</small>
+        <h3>加油去</h3>
+        <p>課程、戶外活動與最新報名</p>
+        <span>查看近期活動 ›</span>
+      </div>
+      <div class="life-number">03</div>
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- CARE SECTION -->
+<section class="care-section" id="care">
+
+  <div class="care-heading">
+    <small>CARE FOR YOUR EVERYDAY</small>
+    <h2>關心你的每一天</h2>
+    <i></i>
+    <p>信仰不只在主日，也陪伴生活裡的每一個需要。</p>
+  </div>
+
+  <div class="care-grid">
+
+    <a class="care-main" href="#health">
+      <div class="care-main-content">
+        <small>DAILY HEALTH</small>
+        <h3>健康小撇步</h3>
+        <p>從天氣、飲食到日常保健，<br>每天給自己多一點照顧。</p>
+        <span>看看今天的健康提醒 ›</span>
+      </div>
+      <div class="care-main-number">01</div>
+    </a>
+
+    <div class="care-small-grid">
+
+      <a class="care-small care-prayer" href="#prayer">
+        <small>PRAYER</small>
+        <div class="care-icon">＋</div>
+        <h3>禱告空間</h3>
+        <p>把你的需要帶到神面前</p>
+        <span>進入禱告 ›</span>
+      </a>
+
+      <a class="care-small care-works" href="#works">
+        <small>CREATIONS</small>
+        <div class="care-icon">♪</div>
+        <h3>作品發表</h3>
+        <p>聽見生命與信仰的創作</p>
+        <span>探索作品 ›</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- /CARE SECTION -->
+
+</body>
+</html>

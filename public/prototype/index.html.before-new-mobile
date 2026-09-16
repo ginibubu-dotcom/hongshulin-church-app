@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>紅樹林靈糧堂 Prototype</title>
+  <link rel="stylesheet" href="/prototype/prototype.css?v=3">
+</head>
+
+<body>
+
+<section class="hero">
+
+  <img class="hero-bg" src="/prototype/hero-mobile.png" alt="">
+
+  <div class="soft-light"></div>
+
+  <header>
+    <img class="logo" src="/prototype/hslllc-logo.png" alt="紅樹林靈糧堂">
+
+    <button class="menu" aria-label="選單">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      CONNECTED · IGNITED · REVIVED
+    </div>
+
+    <h1>
+      <span>在神裡面</span>
+      <span>我們得生命</span>
+      <span class="gold">並且得的更豐盛</span>
+    </h1>
+
+    <div class="line"></div>
+
+    <div class="verse">約翰福音 10:10</div>
+
+    <div class="buttons">
+      <a class="primary" href="#today">今日內容 ›</a>
+      <a class="secondary" href="#gathering">聚會資訊 ›</a>
+    </div>
+
+  </div>
+
+  <div class="signature">
+    <div>More than Life</div>
+    <small>HSLLLC · TAIPEI · TAIWAN</small>
+  </div>
+
+</section>
+
+
+<nav class="quick-nav">
+
+  <a href="#today">
+    <b>♧</b>
+    <span>每日靈修</span>
+  </a>
+
+  <a href="#gathering">
+    <b>◇</b>
+    <span>聚會資訊</span>
+  </a>
+
+  <a href="#media">
+    <b>▷</b>
+    <span>影音媒體</span>
+  </a>
+
+  <a href="#family">
+    <b>♧</b>
+    <span>家遊趣</span>
+  </a>
+
+  <a href="#works">
+    <b>♡</b>
+    <span>牧者創作</span>
+  </a>
+
+</nav>
+
+
+<section class="today" id="today">
+
+  <div class="section-title">
+    <small>DAILY WORD</small>
+    <h2>今日內容</h2>
+    <i></i>
+    <p>讓神的話，成為你今天的力量</p>
+  </div>
+
+  <div class="daily-card">
+    <small>DAILY SCRIPTURE</small>
+    <h3>每日經文</h3>
+    <p>此位置未來由 n8n 每日自動更新圖卡</p>
+  </div>
+
+</section>
+
+</body>
+</html>
